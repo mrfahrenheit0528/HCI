@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIR ORUS 2.0 - Business Search</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            /* slate-50 */
+            color: #1e293b;
+        }
+
+        .input-base {
+            @apply w-full px-4 py-3 bg-[#f8fafc] border-2 border-[#e2e8f0] rounded-xl text-slate-900 focus:outline-none focus:border-[#244093] focus:bg-white focus:ring-4 focus:ring-[#244093]/10 transition-all duration-200 text-sm font-semibold placeholder:text-slate-400 hover:border-slate-300 hover:bg-white;
+        }
+
+        .label-base {
+            @apply block text-[11px] font-black text-slate-500 uppercase tracking-widest mb-2 ml-1;
+        }
+
+        .input-base {
+            @apply w-full px-4 py-3 bg-[#f8fafc] border-2 border-[#e2e8f0] rounded-xl text-slate-900 focus:outline-none focus:border-[#244093] focus:bg-white focus:ring-4 focus:ring-[#244093]/10 transition-all duration-200 text-sm font-semibold placeholder:text-slate-400 hover:border-slate-300 hover:bg-white;
+        }
+
+        .label-base {
+            @apply block text-[11px] font-black text-slate-500 uppercase tracking-widest mb-2 ml-1;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- TOP NAVIGATION -->
+    <nav class="bg-white border-b sticky top-0 z-50 px-6 py-4 md:px-24 flex items-center justify-between shadow-sm">
+        <a href="orus_home.html" class="flex items-center gap-4 cursor-pointer">
+            <img src="orus_logo.png" alt="ORUS Logo" class="h-9 w-auto"
+                onerror="this.src='https://placehold.co/120x40?text=ORUS'">
+        </a>
+
+        <div class="flex items-center gap-6">
+            <a href="tin_verification.html"
+                class="text-xs font-bold text-slate-500 hover:text-[#03297b] uppercase tracking-wider flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Back to Options
+            </a>
+        </div>
+    </nav>
+
+    <div class="flex-grow flex flex-col items-center py-12 px-4 md:px-8 max-w-[1400px] mx-auto w-full">
+
+        <!-- White Form Card -->
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-100 w-full max-w-3xl overflow-hidden">
+            <!-- Header -->
+            <div class="bg-slate-50 border-b border-slate-100 px-8 py-6 text-center relative">
+                <!-- Decorative Icon -->
+                <div class="absolute right-6 top-1/2 -translate-y-1/2 opacity-10">
+                    <svg class="w-20 h-20 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                </div>
+
+                <span class="text-[10px] font-black uppercase tracking-widest text-amber-600 mb-2 block">Public Service
+                    Request</span>
+                <h1 class="text-xl md:text-2xl font-black text-slate-800">BIR-Registered Business Search</h1>
+                <p class="text-xs text-slate-500 mt-2 font-medium">Verify taxpayer classification and business
+                    registration</p>
+            </div>
+
+            <!-- Form Body -->
+            <div class="p-8 md:p-12">
+
+                <div class="bg-amber-50 border border-amber-100 p-5 rounded-xl mb-8 flex gap-4">
+                    <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="text-xs text-amber-800 font-medium space-y-2">
+                        <p><strong>For Individuals:</strong> When encoding the Registered Name / Trade Name, please
+                            observe spaces and comma as separator (e.g., DELA CRUZ, JUAN).</p>
+                        <p><strong>For Corporate:</strong> The required encoding of Registered Name should be the EXACT
+                            MATCH (e.g., THE CORPORATION INC.).</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6 mb-8 mt-2">
+                    <div class="relative w-full">
+                        <input type="text" id="reg_name" class="block px-4 py-3 w-full bg-[#f8fafc] border-2 border-[#e2e8f0] rounded-xl text-slate-900 focus:outline-none focus:border-[#244093] focus:bg-white focus:ring-4 focus:ring-[#244093]/10 transition-all duration-200 text-sm font-semibold peer hover:border-slate-300 hover:bg-white" placeholder=" ">
+                        <label for="reg_name" class="absolute text-sm font-bold text-slate-500 duration-200 transform -translate-y-4 scale-75 top-2 z-10 origin-left left-4 px-1 peer-focus:text-[#244093] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 pointer-events-none rounded-sm bg-white peer-placeholder-shown:bg-transparent">Registered Name / Trade Name <span
+                                class="text-red-500">*</span></label>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-[2fr_1fr] gap-6">
+                        <div class="relative w-full">
+                            <input type="text" id="tin" maxlength="9" class="block px-4 py-3 w-full bg-[#f8fafc] border-2 border-[#e2e8f0] rounded-xl text-slate-900 focus:outline-none focus:border-[#244093] focus:bg-white focus:ring-4 focus:ring-[#244093]/10 transition-all duration-200 text-sm font-semibold peer hover:border-slate-300 hover:bg-white tracking-[0.2em] font-bold"
+                                placeholder=" ">
+                            <label for="tin" class="absolute text-sm font-bold text-slate-500 duration-200 transform -translate-y-4 scale-75 top-2 z-10 origin-left left-4 px-1 peer-focus:text-[#244093] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 pointer-events-none rounded-sm bg-white peer-placeholder-shown:bg-transparent">Taxpayer Identification Number (TIN) <span
+                                    class="text-red-500">*</span></label>
+                        </div>
+                        <div class="relative w-full">
+                            <input type="text" id="branch" maxlength="5"
+                                class="block px-4 py-3 w-full bg-[#f8fafc] border-2 border-[#e2e8f0] rounded-xl text-slate-900 focus:outline-none focus:border-[#244093] focus:bg-white focus:ring-4 focus:ring-[#244093]/10 transition-all duration-200 text-sm font-semibold peer hover:border-slate-300 hover:bg-white tracking-[0.2em] font-bold text-center" placeholder=" ">
+                            <label for="branch" class="absolute text-sm font-bold text-slate-500 duration-200 transform -translate-y-4 scale-75 top-2 z-10 origin-left left-4 px-1 peer-focus:text-[#244093] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 pointer-events-none rounded-sm bg-white peer-placeholder-shown:bg-transparent">Branch Code</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mock reCAPTCHA -->
+                <div class="flex justify-center mb-8">
+                    <div
+                        class="border border-slate-200 rounded-md bg-slate-50 p-4 flex items-center justify-between w-full max-w-sm shadow-sm cursor-pointer hover:bg-slate-100 transition-colors">
+                        <label class="flex items-center gap-4 cursor-pointer">
+                            <input type="checkbox"
+                                class="w-6 h-6 rounded border-slate-300 text-green-500 focus:ring-green-500 cursor-pointer">
+                            <span class="text-sm font-medium text-slate-700">I'm not a robot</span>
+                        </label>
+                        <div class="flex flex-col items-center">
+                            <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
+                            </svg>
+                            <span class="text-[8px] text-slate-400">reCAPTCHA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <button onclick="alert('Search initiated!')"
+                    class="w-full bg-[#f5b026] text-[#011a4d] py-4 rounded-xl font-black uppercase tracking-widest text-sm shadow-md hover:bg-yellow-400 hover:shadow-lg transition-all flex items-center justify-center gap-2 relative overflow-hidden group">
+                    <span class="relative z-10 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        Search Database
+                    </span>
+                    <div
+                        class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

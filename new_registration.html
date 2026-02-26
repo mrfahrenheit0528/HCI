@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIR ORUS 2.0 - Official Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+        }
+
+        .bir-gradient-overlay {
+            background: linear-gradient(105deg, rgba(144, 43, 43, 0.85) 0%, rgba(3, 41, 123, 0.9) 100%);
+        }
+
+        .hero-bg {
+            background-image: url('bg.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .card-shadow:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Flow Transitions */
+        .step-transition {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .hidden-step {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .active-step {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Modal Transitions */
+        .modal-overlay {
+            background-color: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-content {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .hidden-modal {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .hidden-modal .modal-content {
+            transform: scale(0.95) translateY(20px);
+        }
+
+        /* Checkbox Customization */
+        .custom-checkbox {
+            appearance: none;
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.25em;
+            height: 1.25em;
+            border: 2px solid #cbd5e1;
+            border-radius: 0.25em;
+            display: grid;
+            place-content: center;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .custom-checkbox::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em white;
+            background-color: white;
+            transform-origin: center;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+
+        .custom-checkbox:checked {
+            background-color: #03297b;
+            border-color: #03297b;
+        }
+
+        .custom-checkbox:checked::before {
+            transform: scale(1);
+        }
+
+        /* Radio Button Customization */
+        .custom-radio {
+            appearance: none;
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.25em;
+            height: 1.25em;
+            border: 2px solid #cbd5e1;
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .custom-radio::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em #03297b;
+        }
+
+        .custom-radio:checked {
+            border-color: #03297b;
+        }
+
+        .custom-radio:checked::before {
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- TOP NAVIGATION -->
+    <nav class="bg-white border-b sticky top-0 z-50 px-6 py-4 md:px-24 flex items-center justify-between">
+        <a href="orus_home.html" class="flex items-center gap-4 cursor-pointer">
+            <img src="orus_logo.png" alt="ORUS Logo" class="h-9 w-auto"
+                onerror="this.src='https://placehold.co/120x40?text=ORUS'">
+        </a>
+
+        <div class="hidden md:flex items-center gap-10 font-bold text-xs uppercase tracking-widest text-slate-800">
+            <a href="orus_home.html" class="hover:text-blue-800">Home</a>
+            <a href="#" class="hover:text-blue-800">About</a>
+            <a href="#" class="hover:text-blue-800">FAQs</a>
+            <a href="digital_tin_id.html" class="hover:text-blue-800 text-blue-600">Digital TIN ID</a>
+            <button
+                class="bg-[#03297b] text-white px-8 py-2.5 rounded font-bold uppercase tracking-wider hover:bg-blue-900 transition-all shadow-lg">Login</button>
+        </div>
+    </nav>
+
+    <div class="flex-grow bg-slate-50 relative">
+        <!-- Header Section -->
+        <div class="hero-bg py-16 px-6 md:px-24 text-white relative overflow-hidden">
+            <div class="absolute inset-0 bir-gradient-overlay z-0"></div>
+            <!-- Decorative Background Elements -->
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3">
+            </div>
+
+            <div class="max-w-7xl mx-auto relative z-10">
+                <nav class="text-[10px] font-black tracking-widest mb-6 opacity-60 flex items-center gap-2 uppercase">
+                    <a href="orus_home.html" class="hover:text-white transition-colors">Home</a>
+                    <span>/</span>
+                    <span class="text-white opacity-100">New Registration</span>
+                </nav>
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div>
+                        <h1 class="text-3xl md:text-5xl font-black mb-4 tracking-tight">New Registration</h1>
+                        <p class="text-blue-100 opacity-80 max-w-2xl text-sm md:text-base leading-relaxed">Create your
+                            official BIR Taxpayer Identification Number (TIN) and ORUS profile.</p>
+                    </div>
+                    <!-- Step Indicator -->
+                    <div
+                        class="flex items-center gap-3 bg-black/20 px-6 py-4 rounded-xl backdrop-blur-sm border border-white/10">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-white text-blue-900 flex items-center justify-center font-bold text-sm"
+                                id="progress-indicator">1</div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-white">of 4</span>
+                        </div>
+                        <div class="h-8 w-px bg-white/20 mx-2"></div>
+                        <div class="text-[10px] font-black uppercase tracking-widest text-white/70" id="progress-label">
+                            Category</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 -mt-8 mb-24 relative z-20">
+            <div
+                class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] sm:p-10 p-6 min-h-[500px] border border-slate-100">
+
+                <!-- STEP 1: CATEGORY SELECTION -->
+                <div id="step-1" class="step-transition active-step">
+                    <div class="mb-10 text-center">
+                        <h2 class="text-2xl font-bold text-slate-800 mb-3">Select Taxpayer Category</h2>
+                        <p class="text-sm text-slate-500">Choose the registration pathway that best describes you or
+                            your organization.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <!-- Individual Card -->
+                        <div onclick="selectCategory('individual')" id="card-individual"
+                            class="group border-2 border-slate-100 p-8 rounded-xl cursor-pointer hover:border-blue-700 hover:shadow-lg transition-all relative overflow-hidden bg-white">
+                            <div
+                                class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full translate-x-1/2 -translate-y-1/2 group-hover:scale-150 transition-transform duration-500 ease-in-out">
+                            </div>
+
+                            <div class="relative z-10">
+                                <div
+                                    class="w-14 h-14 bg-blue-50 text-blue-700 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-700 group-hover:text-white transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                </div>
+                                <h3
+                                    class="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-900 transition-colors">
+                                    As An Individual</h3>
+                                <p class="text-sm text-slate-500 mb-6 leading-relaxed">For Professionals, Single
+                                    Proprietors, Employees, Mixed Income Earners, and EO 98.</p>
+
+                                <div class="border-t border-slate-100 pt-4 hidden" id="reqs-individual">
+                                    <h4 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">
+                                        Requirements</h4>
+                                    <ul class="text-xs text-slate-600 space-y-2">
+                                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 13l4 4L19 7" />
+                                            </svg> Valid Email Address</li>
+                                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 13l4 4L19 7" />
+                                            </svg> Government Issued ID (e.g., Passport, Driver's License)</li>
+                                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 13l4 4L19 7" />
+                                            </svg> PSA Birth Certificate</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Non-Individual Card -->
+                        <div onclick="selectCategory('non-individual')" id="card-non-individual"
+                            class="group border-2 border-slate-100 p-8 rounded-xl cursor-pointer hover:border-blue-700 hover:shadow-lg transition-all relative overflow-hidden bg-white">
+                            <div
+                                class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full translate-x-1/2 -translate-y-1/2 group-hover:scale-150 transition-transform duration-500 ease-in-out">
+                            </div>
+
+                            <div class="relative z-10">
+                                <div
+                                    class="w-14 h-14 bg-blue-50 text-blue-700 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-700 group-hover:text-white transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                    </svg>
+                                </div>
+                                <h3
+                                    class="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-900 transition-colors">
+                                    As a Non-Individual</h3>
+                                <p class="text-sm text-slate-500 mb-6 leading-relaxed">For Corporations, Partnerships,
+                                    Cooperatives, Local Government Units, etc.</p>
+
+                                <div class="border-t border-slate-100 pt-4 hidden" id="reqs-non-individual">
+                                    <h4 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">
+                                        Requirements</h4>
+                                    <ul class="text-xs text-slate-600 space-y-2">
+                                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 13l4 4L19 7" />
+                                            </svg> SEC Certificate of Registration / DTI</li>
+                                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 13l4 4L19 7" />
+                                            </svg> Articles of Incorporation</li>
+                                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 13l4 4L19 7" />
+                                            </svg> Board Resolution / Secretary's Certificate</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: REGISTRATION CONFIGURATION -->
+                <div id="step-2" class="step-transition hidden-step">
+                    <button onclick="goToStep(1)"
+                        class="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-blue-700 transition-colors mb-8 group">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 group-hover:-translate-x-1 transition-transform" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                        Back
+                    </button>
+
+                    <h2 class="text-2xl font-bold text-slate-800 mb-2">Registration Details</h2>
+                    <p class="text-sm text-slate-500 mb-10 pb-6 border-b border-slate-100">Please provide preliminary
+                        information regarding your registration status.</p>
+
+                    <div class="space-y-10">
+                        <!-- Register As -->
+                        <div>
+                            <label
+                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-4">You
+                                are registering as:</label>
+                            <div class="flex gap-6">
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input type="radio" name="register_as" value="taxpayer" class="custom-radio"
+                                        checked>
+                                    <span
+                                        class="text-sm font-bold text-slate-700 group-hover:text-blue-700 transition-colors">Taxpayer</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input type="radio" name="register_as" value="tax_agent" class="custom-radio">
+                                    <span
+                                        class="text-sm font-bold text-slate-700 group-hover:text-blue-700 transition-colors">Tax
+                                        Agent</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- TIN Status -->
+                        <div>
+                            <label
+                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-4">Please
+                                select an option:</label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <label
+                                    class="border-2 border-slate-100 rounded-lg p-5 cursor-pointer hover:border-blue-200 transition-all flex items-start gap-4">
+                                    <input type="radio" name="tin_status" value="with_tin" class="custom-radio mt-1"
+                                        onchange="toggleUserTypeDropdown()">
+                                    <div>
+                                        <span class="block text-sm font-bold text-slate-800 mb-1">With Existing
+                                            TIN</span>
+                                        <span class="text-xs text-slate-500 leading-relaxed block">I already have a TIN
+                                            but do not have an ORUS account yet.</span>
+                                    </div>
+                                </label>
+                                <label
+                                    class="border-2 border-slate-100 rounded-lg p-5 cursor-pointer hover:border-blue-200 transition-all flex items-start gap-4">
+                                    <input type="radio" name="tin_status" value="without_tin" class="custom-radio mt-1"
+                                        checked onchange="toggleUserTypeDropdown()">
+                                    <div>
+                                        <span class="block text-sm font-bold text-slate-800 mb-1">Without Existing
+                                            TIN</span>
+                                        <span class="text-xs text-slate-500 leading-relaxed block">I am a new applicant
+                                            and need to generate a new TIN.</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- User Type Dropdown (Dynamic) -->
+                        <div id="user-type-container" class="transition-all duration-300">
+                            <label
+                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">User
+                                Type - Transaction</label>
+                            <div class="relative">
+                                <select id="user-type-select"
+                                    class="w-full appearance-none border-2 border-slate-200 text-sm font-bold text-slate-700 rounded-lg px-4 py-4 pr-10 hover:border-blue-400 focus:border-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all cursor-pointer bg-white">
+                                    <option value="" disabled selected>-- Select Transaction Type --</option>
+                                    <!-- Options injected via JS based on category -->
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 flex justify-end">
+                        <button onclick="goToStep(3)" id="btn-step-2" disabled
+                            class="bg-[#03297b] text-white px-10 py-4 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-blue-900 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">Continue
+                            &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: MAIN FORM DATA -->
+                <div id="step-3" class="step-transition hidden-step">
+                    <button onclick="goToStep(2)"
+                        class="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-blue-700 transition-colors mb-8 group">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 group-hover:-translate-x-1 transition-transform" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                        Back
+                    </button>
+
+                    <h2 class="text-2xl font-bold text-slate-800 mb-2">Basic Information</h2>
+                    <p class="text-sm text-slate-500 mb-10 pb-6 border-b border-slate-100">Ensure all details match your
+                        official documents.</p>
+
+                    <!-- Form rendered dynamically based on Individual vs Non-Individual -->
+                    <form id="registration-form" onsubmit="event.preventDefault(); showSuccess();" class="space-y-8">
+                        <div id="dynamic-form-fields" class="space-y-8"></div>
+
+                        <!-- Contact Details (Universal) -->
+                        <div>
+                            <h3 class="font-bold text-slate-800 mb-4 border-l-4 border-[#03297b] pl-3 text-lg">Contact &
+                                Security Details</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label
+                                        class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Email
+                                        Address *</label>
+                                    <input type="email" required
+                                        class="w-full border-2 border-slate-200 rounded-lg px-4 py-3 focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none transition-all font-medium text-sm">
+                                    <p class="text-[10px] text-slate-400 mt-1 italic">This will be your username.</p>
+                                </div>
+                                <div>
+                                    <label
+                                        class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Mobile
+                                        Number *</label>
+                                    <div class="flex">
+                                        <span
+                                            class="inline-flex items-center px-4 rounded-l-lg border-2 border-r-0 border-slate-200 bg-slate-50 text-slate-500 text-sm font-bold">+63</span>
+                                        <input type="tel" pattern="[0-9]{10}" placeholder="9123456789" required
+                                            class="w-full border-2 border-slate-200 rounded-r-lg px-4 py-3 focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none transition-all font-medium text-sm">
+                                    </div>
+                                </div>
+
+                                <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                                    <div>
+                                        <label
+                                            class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Security
+                                            Question *</label>
+                                        <div class="relative">
+                                            <select required
+                                                class="w-full appearance-none border-2 border-slate-200 text-sm font-medium text-slate-700 rounded-lg px-4 py-3 pr-10 focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none transition-all bg-white">
+                                                <option value="" disabled selected>Select a question</option>
+                                                <option>What is your mother's maiden name?</option>
+                                                <option>What was the name of your first pet?</option>
+                                                <option>In what city were you born?</option>
+                                                <option>What was your childhood nickname?</option>
+                                            </select>
+                                            <div
+                                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Security
+                                            Answer *</label>
+                                        <input type="password" required
+                                            class="w-full border-2 border-slate-200 rounded-lg px-4 py-3 focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none transition-all font-medium text-sm">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 border-t border-slate-100 flex justify-between items-center">
+                            <p class="text-[11px] text-slate-400">* Required fields</p>
+                            <button type="submit"
+                                class="bg-blue-600 text-white px-10 py-4 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-600/30 flex items-center gap-2">
+                                Submit Application
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- SUCCESS STATE -->
+                <div id="step-success" class="step-transition hidden-step text-center py-10">
+                    <div
+                        class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-black text-slate-800 mb-4">Application Submitted!</h2>
+                    <p class="text-slate-500 mb-8 max-w-md mx-auto leading-relaxed">We have sent a verification link to
+                        your registered email address. Please click the link to verify your identity and complete the
+                        registration process.</p>
+                    <a href="orus_home.html"
+                        class="inline-block bg-slate-100 text-slate-700 px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-slate-200 transition-colors">Return
+                        to Home</a>
+                </div>
+
+            </div>
+        </div>
+    </div> <!-- End Main Content -->
+
+    <!-- TERMS OF SERVICE MODAL -->
+    <div id="tos-modal" class="fixed inset-0 z-[100] modal-overlay hidden-modal flex items-center justify-center px-4">
+        <div
+            class="modal-content bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="p-6 bg-slate-50 border-b border-slate-100 flex justify-between items-center shrink-0">
+                <h3 class="text-lg font-black text-[#03297b]">Terms of Service and User Agreement</h3>
+                <button onclick="closeModal()"
+                    class="text-slate-400 hover:text-slate-700 transition-colors p-2 rounded-full hover:bg-slate-200">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="p-6 md:p-8 overflow-y-auto flex-grow text-sm text-slate-600 space-y-4" id="tos-content">
+                <p><strong>BUREAU OF INTERNAL REVENUE ONLINE REGISTRATION AND UPDATE SYSTEM (ORUS)</strong></p>
+                <p>By registering and using ORUS, you agree to the following terms and conditions:</p>
+                <ol class="list-decimal pl-5 space-y-3">
+                    <li><strong>Data Privacy Consent:</strong> You authorize the Bureau of Internal Revenue (BIR) to
+                        collect, process, use, and store your personal and business information strictly for tax
+                        administration and enforcement purposes, under the Data Privacy Act of 2012 (R.A. 10173).</li>
+                    <li><strong>Accuracy of Information:</strong> You certify under penalty of perjury that all
+                        information provided is true, correct, and complete to the best of your knowledge. Submission of
+                        false information may result in criminal prosecution and penalties under the National Internal
+                        Revenue Code (NIRC) of 1997, as amended.</li>
+                    <li><strong>Account Security:</strong> You are solely responsible for maintaining the
+                        confidentiality of your credentials (Email, Password, Security Questions). Any transaction
+                        completed through your account shall be presumed valid and authorized by you.</li>
+                    <li><strong>Electronic Notifications:</strong> You agree that all notices, communications, and
+                        electronic certificates generated and sent to your registered email address are considered
+                        validly served and binding.</li>
+                </ol>
+                <p class="pt-4 italic">Please scroll to the bottom to agree.</p>
+                <!-- Extra padding to force scroll -->
+                <div class="h-24"></div>
+            </div>
+
+            <div class="p-6 border-t border-slate-100 bg-white shrink-0">
+                <label class="flex items-start gap-4 cursor-pointer group mb-6">
+                    <input type="checkbox" id="tos-checkbox" class="custom-checkbox mt-0.5" onchange="toggleAgreeBtn()">
+                    <span class="text-sm font-medium text-slate-700 group-hover:text-slate-900 leading-tight">
+                        I have read, understood, and agree to the Terms of Service and Data Privacy Policy. I certify
+                        that the information I will provide is true and correct.
+                    </span>
+                </label>
+
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeModal()"
+                        class="px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-widest text-slate-500 hover:bg-slate-100 transition-colors">Cancel</button>
+                    <button id="btn-agree" onclick="acceptTOS()" disabled
+                        class="bg-[#03297b] text-white px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg disabled:hover:shadow-none">Agree
+                        & Proceed</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#011a4d] text-white pt-20 pb-10 px-6 md:px-24">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
+            <div class="md:col-span-1">
+                <h3 class="text-lg font-black italic tracking-tighter mb-4">ORUS 2.0</h3>
+                <p class="text-[11px] text-white/50 leading-relaxed mb-8">
+                    Bureau of Internal Revenue<br>Online Registration and Update System
+                </p>
+                <div class="flex gap-3">
+                    <div
+                        class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[10px] hover:bg-white/20 transition-colors cursor-pointer">
+                        FB</div>
+                    <div
+                        class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[10px] hover:bg-white/20 transition-colors cursor-pointer">
+                        TW</div>
+                    <div
+                        class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[10px] hover:bg-white/20 transition-colors cursor-pointer">
+                        YT</div>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-[10px] font-black uppercase tracking-widest mb-8 text-white/40">Quick Links</h4>
+                <ul class="text-[11px] space-y-4 font-bold text-white/70">
+                    <li><a href="orus_home.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">How It Works</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Login</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Support</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-[10px] font-black uppercase tracking-widest mb-8 text-white/40">Services</h4>
+                <ul class="text-[11px] space-y-4 font-bold text-white/70">
+                    <li><a href="new_registration.html" class="hover:text-white transition-colors text-white">New
+                            Registration</a></li>
+                    <li><a href="secondary_registration.html" class="hover:text-white transition-colors">Secondary
+                            Registration</a></li>
+                    <li><a href="update_registration.html" class="hover:text-white transition-colors">Update
+                            Registration</a></li>
+                    <li><a href="tin_verification.html" class="hover:text-white transition-colors">TIN Verification</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-[10px] font-black uppercase tracking-widest mb-8 text-white/40">Resources</h4>
+                <ul class="text-[11px] space-y-4 font-bold text-white/70">
+                    <li><a href="#" class="hover:text-white transition-colors">User Guide</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">FAQs</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Download Forms</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-[10px] font-black uppercase tracking-widest mb-8 text-white/40">Legal</h4>
+                <ul class="text-[11px] space-y-4 font-bold text-white/70">
+                    <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Data Protection</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-center items-center gap-6">
+            <div
+                class="text-[9px] font-black uppercase tracking-[0.2em] text-white/40 flex flex-wrap justify-center gap-6">
+                <span>Government Links:</span>
+                <a href="#" class="hover:text-white transition-colors">BIR Official Website</a>
+                <a href="#" class="hover:text-white transition-colors">Gov.ph Portal</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Global State
+        let currentCategory = null; // 'individual' or 'non-individual'
+
+        // Data Configuration
+        const userTypes = {
+            'individual': [
+                { value: 'prof', label: 'Register a Business as Professional' },
+                { value: 'single', label: 'Register a Business as Single Proprietorship' },
+                { value: 'foreign', label: 'Get TIN for Foreign National' },
+                { value: 'eo98', label: 'Get TIN for Filipino Citizen - E.O. 98' },
+                { value: 'ofw', label: 'Get TIN for Overseas Filipino Worker (OFW)' }
+            ],
+            'non-individual': [
+                { value: 'corp', label: 'Corporation' },
+                { value: 'partner', label: 'Partnership' },
+                { value: 'lgu', label: 'Local Government Unit (LGU)' },
+                { value: 'coop', label: 'Cooperative' }
+            ]
+        };
+
+        const formTemplates = {
+            'individual': `
+                <h3 class="font-bold text-slate-800 mb-4 border-l-4 border-[#03297b] pl-3 text-lg">Personal Details</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">First Name *</label>
+                        <input type="text" required class="w-full border-2 border-slate-200 rounded-lg px-4 py-3 focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none transition-all font-medium text-sm">
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 block">Middle Name</label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox w-3 h-3 border border-slate-300" onchange="toggleMiddleName(this)">
+                                <span class="text-[9px] uppercase font-bold text-slate-400">None</span>
+                            </label>
+                        </div>
+                        <input type="text" id="middleNameInput" class="w-full border-2 border-slate-200 rounded-lg px-4 py-3 focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none transition-all font-medium text-sm disabled:bg-slate-100 disabled:opacity-50">
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Last Name *</label>
+                        <input type="text" required class="w-full border-2 border-slate-200 rounded-lg px-4 py-3 focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none transition-all font-medium text-sm">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Suffix</label>
+                        <select class="w-full appearance-none border-2 border-slate-200 text-sm font-medium text-slate-700 rounded-lg px-4 py-3 pr-10 focus:border-blue-700 outline-none bg-white">
+                            <option value="">None</option><option>Jr.</option><option>Sr.</option><option>II</option><option>III</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Date of Birth *</label>
+                        <input type="date" required class="w-full border-2 border-slate-200 rounded-lg px-4 py-3 text-sm font-medium focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none text-slate-700">
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Sex *</label>
+                        <div class="flex gap-4 pt-2">
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input type="radio" name="sex" required class="custom-radio">
+                                <span class="text-sm font-bold text-slate-700 group-hover:text-blue-700">Male</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input type="radio" name="sex" required class="custom-radio">
+                                <span class="text-sm font-bold text-slate-700 group-hover:text-blue-700">Female</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            `,
+            'non-individual': `
+                <h3 class="font-bold text-slate-800 mb-4 border-l-4 border-[#03297b] pl-3 text-lg">Organization Details</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="md:col-span-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Registered Name *</label>
+                        <input type="text" placeholder="As it appears on official SEC/DTI documents" required class="w-full border-2 border-slate-200 rounded-lg px-4 py-3 focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none transition-all font-medium text-sm">
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Date of Incorporation/Creation *</label>
+                        <input type="date" required class="w-full border-2 border-slate-200 rounded-lg px-4 py-3 text-sm font-medium focus:border-blue-700 focus:ring-4 focus:ring-blue-100 outline-none text-slate-700">
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Country of Residence/Operations *</label>
+                        <select required class="w-full appearance-none border-2 border-slate-200 text-sm font-medium text-slate-700 rounded-lg px-4 py-3 pr-10 focus:border-blue-700 outline-none bg-white">
+                            <option value="PH" selected>Philippines</option>
+                            <option value="US">United States</option>
+                            <option value="JP">Japan</option>
+                            <!-- other countries -->
+                        </select>
+                    </div>
+                </div>
+            `
+        };
+
+        // --- STEP 1: CATEGORY SELECTION ---
+        function selectCategory(category) {
+            currentCategory = category;
+
+            // Visual Update for selection
+            document.getElementById('card-individual').classList.remove('border-blue-700', 'shadow-lg');
+            document.getElementById('card-non-individual').classList.remove('border-blue-700', 'shadow-lg');
+
+            const activeCard = document.getElementById(`card-${category}`);
+            activeCard.classList.add('border-blue-700', 'shadow-lg');
+
+            // Show Requirements smoothly
+            document.getElementById('reqs-individual').classList.add('hidden');
+            document.getElementById('reqs-non-individual').classList.add('hidden');
+            document.getElementById(`reqs-${category}`).classList.remove('hidden');
+
+            // Trigger Modal after a tiny delay so user sees selection
+            setTimeout(() => {
+                openModal();
+            }, 600);
+        }
+
+        // --- MODAL LOGIC (TOS) ---
+        function openModal() {
+            const modal = document.getElementById('tos-modal');
+            modal.classList.remove('hidden-modal');
+
+            // Auto check if scrolled to bottom
+            const content = document.getElementById('tos-content');
+            content.addEventListener('scroll', function () {
+                if (content.scrollTop + content.clientHeight >= content.scrollHeight - 10) {
+                    // user scrolled to bottom
+                }
+            });
+
+            // Reset state
+            const cb = document.getElementById('tos-checkbox');
+            cb.checked = false;
+            toggleAgreeBtn();
+        }
+
+        function closeModal() {
+            document.getElementById('tos-modal').classList.add('hidden-modal');
+        }
+
+        function toggleAgreeBtn() {
+            const cb = document.getElementById('tos-checkbox');
+            const btn = document.getElementById('btn-agree');
+            btn.disabled = !cb.checked;
+        }
+
+        function acceptTOS() {
+            closeModal();
+            prepareStep2();
+            goToStep(2);
+        }
+
+        // --- STEP 2 LOGIC ---
+        function prepareStep2() {
+            // Populate Dropdown
+            const select = document.getElementById('user-type-select');
+            select.innerHTML = '<option value="" disabled selected>-- Select Transaction Type --</option>';
+
+            userTypes[currentCategory].forEach(opt => {
+                const el = document.createElement('option');
+                el.value = opt.value;
+                el.innerText = opt.label;
+                select.appendChild(el);
+            });
+
+            // Add listener to enable Step 2 Next button
+            select.addEventListener('change', checkStep2Validity);
+            const radios = document.querySelectorAll('input[name="register_as"], input[name="tin_status"]');
+            radios.forEach(r => r.addEventListener('change', checkStep2Validity));
+
+            // Reset Dropdown logic
+            toggleUserTypeDropdown();
+        }
+
+        function toggleUserTypeDropdown() {
+            const noTinRadio = document.querySelector('input[name="tin_status"][value="without_tin"]');
+            const dropdownContainer = document.getElementById('user-type-container');
+            const select = document.getElementById('user-type-select');
+
+            if (noTinRadio.checked) {
+                dropdownContainer.style.opacity = '1';
+                dropdownContainer.style.pointerEvents = 'auto';
+            } else {
+                dropdownContainer.style.opacity = '0.5';
+                dropdownContainer.style.pointerEvents = 'none';
+                select.value = ""; // clear
+            }
+            checkStep2Validity();
+        }
+
+        function checkStep2Validity() {
+            const noTinRadio = document.querySelector('input[name="tin_status"][value="without_tin"]');
+            const select = document.getElementById('user-type-select');
+            const btn = document.getElementById('btn-step-2');
+
+            if (noTinRadio.checked) {
+                btn.disabled = select.value === "";
+            } else {
+                btn.disabled = false; // With TIN doesn't need dropdown
+            }
+        }
+
+        // --- NAVIGATION ---
+        function goToStep(stepNum) {
+            // Hide all steps
+            document.getElementById('step-1').classList.replace('active-step', 'hidden-step');
+            document.getElementById('step-2').classList.replace('active-step', 'hidden-step');
+            document.getElementById('step-3').classList.replace('active-step', 'hidden-step');
+            document.getElementById('step-success').classList.replace('active-step', 'hidden-step');
+
+            // Show target
+            if (stepNum === 3) prepareStep3(); // inject form html first
+
+            setTimeout(() => {
+                const target = stepNum === 'success' ? 'step-success' : `step-${stepNum}`;
+                document.getElementById(target).classList.replace('hidden-step', 'active-step');
+
+                // Update Progress Indicator
+                if (stepNum !== 'success') {
+                    document.getElementById('progress-indicator').innerText = stepNum;
+                    const labels = { 1: 'Category', 2: 'Config', 3: 'Details' };
+                    document.getElementById('progress-label').innerText = labels[stepNum];
+                }
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 50);
+        }
+
+        // --- STEP 3 LOGIC ---
+        function prepareStep3() {
+            // Inject correct form template
+            document.getElementById('dynamic-form-fields').innerHTML = formTemplates[currentCategory];
+        }
+
+        function toggleMiddleName(checkbox) {
+            const input = document.getElementById('middleNameInput');
+            if (input) {
+                input.disabled = checkbox.checked;
+                if (checkbox.checked) input.value = '';
+                input.required = !checkbox.checked;
+            }
+        }
+
+        function showSuccess() {
+            // normally would do API call here
+            goToStep('success');
+            // update header to indicate complete
+            document.getElementById('progress-indicator').innerHTML = `<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>`;
+            document.getElementById('progress-indicator').classList.add('bg-green-500', 'text-white');
+            document.getElementById('progress-indicator').classList.remove('text-blue-900', 'bg-white');
+            document.getElementById('progress-label').innerText = "Complete";
+        }
+    </script>
+</body>
+
+</html>

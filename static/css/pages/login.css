@@ -11,6 +11,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 4rem;
   color: white;
 }
@@ -70,29 +72,7 @@
   }
 }
 
-.form-toggle {
-  display: flex;
-  background: #f1f5f9;
-  padding: 0.25rem;
-  border-radius: 0.75rem;
-  margin-bottom: 2rem;
-}
-
-.toggle-btn {
-  flex: 1;
-  padding: 0.75rem;
-  border-radius: 0.6rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #64748b;
-  transition: all 0.3s ease;
-}
-
-.toggle-btn.is-active {
-  background: white;
-  color: #03297b;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
+/* Removed Toggle Styles */
 
 .input-group {
   margin-bottom: 1.5rem;
@@ -149,32 +129,7 @@
   transform: translateY(0);
 }
 
-.social-login {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid #f1f5f9;
-}
-
-.social-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  width: 100%;
-  padding: 0.75rem;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.75rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #475569;
-  transition: all 0.2s ease;
-}
-
-.social-btn:hover {
-  background: #f8fafc;
-  border-color: #cbd5e1;
-}
+/* Removed Social Styles */
 
 .auth-mode-content {
   display: none;

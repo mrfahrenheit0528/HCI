@@ -17,7 +17,7 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/pages/login.css') }}"
     />
-    <script src="{{ url_for('static', filename='js/login.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/login.js') }}?v={{ range(1, 99999) | random }}" defer></script>
   </head>
   <body>
     <main class="auth-container">
@@ -25,17 +25,17 @@
       <section class="auth-visual">
         <div class="auth-visual-bg"></div>
         <div class="auth-visual-content">
-          <a href="orus_home.html" class="flex items-center gap-3 mb-12 group">
+          <a href="orus_home.html" class="flex items-center justify-center gap-3 mb-12 group">
             <div
-              class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
+              class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform"
             >
               <img
                 src="{{ url_for('static', filename='images/portax_logo.png') }}"
                 alt="Logo"
-                class="w-8 h-8"
+                class="w-9 h-9"
               />
             </div>
-            <span class="text-2xl font-black tracking-tighter text-white"
+            <span class="text-3xl font-black tracking-tighter text-white"
               >PorTaxPH</span
             >
           </a>
@@ -50,23 +50,18 @@
           </p>
 
           <div class="grid grid-cols-2 gap-6">
-            <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+            <div class="bg-white/10 backdrop-blur-md py-4 px-6 rounded-2xl border border-white/10">
               <div class="text-3xl font-bold mb-1">99%</div>
               <div class="text-xs uppercase font-bold tracking-widest text-white/60">Success Rate</div>
             </div>
-            <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+            <div class="bg-white/10 backdrop-blur-md py-4 px-6 rounded-2xl border border-white/10">
               <div class="text-3xl font-bold mb-1">24/7</div>
               <div class="text-xs uppercase font-bold tracking-widest text-white/60">Digital Support</div>
             </div>
           </div>
         </div>
 
-        <!-- Decorative Elements -->
-        <div class="absolute bottom-12 left-12 z-20">
-          <p class="text-[10px] font-black uppercase tracking-[0.3em] text-white/40">
-            Official Portal of the Bureau of Internal Revenue
-          </p>
-        </div>
+        <!-- Decorative Elements Removed -->
       </section>
 
       <!-- Right Side: Form Area -->
@@ -86,130 +81,54 @@
             <p class="text-slate-500 font-medium">Enter your details to continue</p>
           </div>
 
-          <!-- Mode Toggle -->
-          <div class="form-toggle">
-            <button
-              class="toggle-btn is-active"
-              data-auth-toggle="login"
-              id="toggle-login"
-            >
-              Sign In
-            </button>
-            <button
-              class="toggle-btn"
-              data-auth-toggle="signup"
-              id="toggle-signup"
-            >
-              Create Account
-            </button>
-          </div>
-
-          <!-- Login Form -->
-          <div id="login-content" class="auth-mode-content is-active">
-            <form action="#" method="POST">
-              <div class="input-group">
-                <label class="input-label" for="login-email">Email Address</label>
-                <input
-                  type="email"
-                  id="login-email"
-                  class="input-field"
-                  placeholder="name@company.com"
-                  required
-                />
-              </div>
-              <div class="input-group">
-                <div class="flex justify-between items-center mb-2">
-                  <label class="input-label mb-0" for="login-password">Password</label>
-                  <a href="#" class="text-[11px] font-bold text-[#03297b] hover:underline">Forgot?</a>
-                </div>
-                <input
-                  type="password"
-                  id="login-password"
-                  class="input-field"
-                  placeholder="••••••••"
-                  required
-                />
-              </div>
-              <div class="flex items-center gap-3 mb-8">
-                <input
-                  type="checkbox"
-                  id="remember"
-                  class="w-4 h-4 rounded border-slate-300 text-[#03297b] focus:ring-[#03297b]"
-                />
-                <label for="remember" class="text-sm text-slate-600 font-medium">Remember me</label>
-              </div>
-              <button type="submit" class="auth-btn">Sign In to Portal</button>
-            </form>
-          </div>
-
-          <!-- Signup Form -->
-          <div id="signup-content" class="auth-mode-content">
-            <form action="#" method="POST">
-              <div class="grid grid-cols-2 gap-4 mb-4">
-                <div class="input-group mb-0">
-                  <label class="input-label" for="first-name">First Name</label>
+          <!-- Mode Toggle Removed -->
+          <div class="space-y-6">
+            <!-- Login Form -->
+            <div id="login-content" class="auth-mode-content is-active">
+              <form action="#" method="POST">
+                <div class="input-group">
+                  <label class="input-label" for="login-email">Email Address</label>
                   <input
-                    type="text"
-                    id="first-name"
+                    type="email"
+                    id="login-email"
                     class="input-field"
-                    placeholder="Juan"
+                    placeholder="name@company.com"
                     required
                   />
                 </div>
-                <div class="input-group mb-0">
-                  <label class="input-label" for="last-name">Last Name</label>
+                <div class="input-group">
+                  <label class="input-label" for="login-password">Password</label>
                   <input
-                    type="text"
-                    id="last-name"
+                    type="password"
+                    id="login-password"
                     class="input-field"
-                    placeholder="Dela Cruz"
+                    placeholder="••••••••"
                     required
                   />
                 </div>
-              </div>
-              <div class="input-group">
-                <label class="input-label" for="signup-email">Email Address</label>
-                <input
-                  type="email"
-                  id="signup-email"
-                  class="input-field"
-                  placeholder="name@company.com"
-                  required
-                />
-              </div>
-              <div class="input-group">
-                <label class="input-label" for="signup-password">Create Password</label>
-                <input
-                  type="password"
-                  id="signup-password"
-                  class="input-field"
-                  placeholder="Min. 8 characters"
-                  required
-                />
-              </div>
-              <p class="text-[11px] text-slate-400 mb-8">
-                By creating an account, you agree to our
-                <a href="#" class="text-[#03297b] font-bold">Terms of Service</a> and
-                <a href="#" class="text-[#03297b] font-bold">Privacy Policy</a>.
+                <div class="flex items-center justify-between mb-8">
+                  <label class="flex items-center gap-2 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      id="remember"
+                      class="w-4 h-4 rounded border-slate-300 text-[#03297b] focus:ring-[#03297b] cursor-pointer"
+                    />
+                    <span class="text-xs text-slate-600 font-bold group-hover:text-slate-800 transition-colors">Remember me</span>
+                  </label>
+                  <a href="#" class="text-xs font-bold text-[#03297b] hover:underline">Forgot Password?</a>
+                </div>
+                <button type="submit" class="auth-btn">Sign In to Portal</button>
+              </form>
+            </div>
+
+            <!-- Create Account Link -->
+            <div class="pt-8 border-t border-slate-100 text-center">
+              <p class="text-sm text-slate-500 font-medium">
+                No account? 
+                <a href="new_registration.html" class="text-[#03297b] font-black hover:underline ml-1">
+                  Register Now!
+                </a>
               </p>
-              <button type="submit" class="auth-btn">Create Official Account</button>
-            </form>
-          </div>
-
-          <!-- Social Login -->
-          <div class="social-login">
-            <p class="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">
-              Or continue with
-            </p>
-            <div class="grid grid-cols-2 gap-4">
-              <button class="social-btn">
-                <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-4 h-4" alt="Google" />
-                Google
-              </button>
-              <button class="social-btn">
-                <img src="https://www.svgrepo.com/show/448234/facebook.svg" class="w-4 h-4" alt="FB" />
-                Facebook
-              </button>
             </div>
           </div>
         </div>

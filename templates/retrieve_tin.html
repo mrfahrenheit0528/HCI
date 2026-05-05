@@ -16,13 +16,13 @@
     />
   </head>
 
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen no-scrollbar flex flex-col">
     <!-- TOP NAVIGATION REMOVED FOR FORMS -->
 
     <div class="flex-grow flex flex-col">
       <!-- Header Section -->
       <div
-        class="hero-bg py-20 px-6 md:px-24 text-white relative overflow-hidden shrink-0"
+        class="hero-bg pt-20 pb-40 px-6 md:px-24 text-white relative overflow-hidden shrink-0"
       >
         <div class="absolute inset-0 bir-gradient-overlay z-0"></div>
         <!-- Decorative Elements -->
@@ -34,7 +34,7 @@
         ></div>
 
         <div class="max-w-7xl mx-auto relative z-10 mb-8">
-          <a href="/" class="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors group">
+          <a href="orus_home.html" class="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors group">
             <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
@@ -42,15 +42,15 @@
           </a>
         </div>
 
-        <div class="max-w-7xl mx-auto relative z-10">
-          <div class="flex items-center justify-center gap-6">
+        <div class="max-w-7xl mx-auto relative z-10 reveal">
+          <div class="flex items-center justify-center gap-3">
             
             <h1 class="text-3xl md:text-5xl font-black tracking-tight">
               Retrieve TIN
             </h1>
           </div>
           <p
-            class="text-blue-100 opacity-90 max-w-2xl mx-auto text-sm md:text-base leading-relaxed text-center mt-6"
+            class="text-blue-100 opacity-90 max-w-2xl mx-auto text-sm md:text-base leading-relaxed text-center mt-3"
           >
             Recover your existing Tax Identification Number by verifying your
             personal identity.
@@ -59,9 +59,9 @@
       </div>
 
       <!-- Form Section -->
-      <div class="flex-grow flex items-start justify-center px-4 py-12">
+      <div class="flex-grow flex items-start justify-center px-4 py-12 reveal">
         <div
-          class="bg-white rounded-xl shadow-xl border border-slate-100 w-full max-w-xl p-8 md:p-12 relative z-20 -mt-20"
+          class="bg-white rounded-xl shadow-xl border border-slate-100 w-full max-w-xl p-8 md:p-12 relative z-20 -mt-24"
         >
           <div class="flex items-center justify-center mb-8">
             <div
@@ -90,7 +90,7 @@
           </h3>
 
           <div class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div>
                 <label
                   class="text-[10px] font-black uppercase tracking-widest text-slate-500 block mb-2"
@@ -163,5 +163,6 @@
     </div>
 
     {% include "partials/footer.html" %}
+    <script src="{{ url_for('static', filename='js/global_animations.js') }}"></script>
   </body>
 </html>

@@ -16,13 +16,13 @@
     />
   </head>
 
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen no-scrollbar flex flex-col">
     <!-- TOP NAVIGATION REMOVED FOR FORMS -->
 
     <div class="flex-grow bg-slate-50 relative pb-24">
       <!-- Header Section -->
       <div
-        class="hero-bg py-20 px-6 md:px-24 text-white relative overflow-hidden"
+        class="hero-bg pt-20 pb-40 px-6 md:px-24 text-white relative overflow-hidden"
       >
         <div class="absolute inset-0 bir-gradient-overlay z-0"></div>
         <!-- Decorative Elements -->
@@ -42,24 +42,23 @@
           </a>
         </div>
 
-        <div class="max-w-7xl mx-auto relative z-10">
-          <div class="flex items-center justify-center gap-6">
-            
-            <h1 class="text-3xl md:text-5xl font-black tracking-tight">
+        <div class="max-w-7xl mx-auto relative z-10 reveal">
+          <div class="text-center">
+            <h1 class="text-3xl md:text-5xl font-black mb-1 tracking-tight">
               Verify TIN / Search Business
             </h1>
+            <p
+              class="text-blue-100 opacity-90 max-w-2xl mx-auto text-sm md:text-base leading-relaxed"
+            >
+              Verify the validity of a Taxpayer Identification Number or search
+              for official BIR-registered businesses to ensure legitimacy.
+            </p>
           </div>
-          <p
-            class="text-blue-100 opacity-90 max-w-2xl mx-auto text-sm md:text-base leading-relaxed"
-          >
-            Verify the validity of a Taxpayer Identification Number or search
-            for official BIR-registered businesses to ensure legitimacy.
-          </p>
         </div>
       </div>
 
       <!-- Services Grid -->
-      <div class="max-w-5xl mx-auto px-6 -mt-10 relative z-20">
+      <div class="max-w-5xl mx-auto px-6 -mt-24 relative z-20 reveal">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- Service 1: TIN Verification -->
           <a
@@ -177,5 +176,6 @@
     </div>
 
     {% include "partials/footer.html" %}
+    <script src="{{ url_for('static', filename='js/global_animations.js') }}"></script>
   </body>
 </html>

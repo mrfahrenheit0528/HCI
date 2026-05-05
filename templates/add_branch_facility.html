@@ -20,13 +20,13 @@
     ></script>
   </head>
 
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen no-scrollbar flex flex-col">
     <!-- TOP NAVIGATION REMOVED FOR FORMS -->
 
     <div class="flex-grow bg-slate-50 relative pb-24">
       <!-- Header Section -->
       <div
-        class="hero-bg py-20 px-6 md:px-24 text-white relative overflow-hidden"
+        class="hero-bg pt-20 pb-40 px-6 md:px-24 text-white relative overflow-hidden"
       >
         <div class="absolute inset-0 bir-gradient-overlay z-0"></div>
         <!-- Decorative Elements -->
@@ -46,15 +46,15 @@
           </a>
         </div>
 
-        <div class="max-w-7xl mx-auto relative z-10">
-          <div class="flex items-center justify-center gap-6">
+        <div class="max-w-7xl mx-auto relative z-10 reveal">
+          <div class="flex items-center justify-center gap-3">
             
             <h1 class="text-3xl md:text-5xl font-black tracking-tight">
               Add Branch / Facility
             </h1>
           </div>
           <p
-            class="text-blue-100 opacity-90 max-w-2xl mx-auto text-sm md:text-base leading-relaxed"
+            class="text-blue-100 opacity-90 max-w-2xl mx-auto text-sm md:text-base leading-relaxed text-center mt-3"
           >
             Register a new branch, facility, or place of business under your
             existing PorTaxPH account.
@@ -63,8 +63,8 @@
       </div>
 
       <!-- Services Grid -->
-      <div class="max-w-4xl mx-auto px-6 -mt-10 relative z-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="max-w-4xl mx-auto px-6 -mt-24 relative z-20 reveal">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <!-- Service 1: Branch -->
           <div
             onclick="openModal('branch')"
@@ -216,7 +216,7 @@
           </svg>
         </button>
 
-        <div class="px-8 pb-8 -mt-10 relative z-10 text-center">
+        <div class="px-8 pb-8 -mt-24 relative z-10 text-center">
           <!-- Icon Injected via JS -->
           <div
             id="modal-icon-container"
@@ -286,7 +286,6 @@
     </div>
 
     {% include "partials/footer.html" %}
-
-    <!-- JAVASCRIPT LOGIC -->
+    <script src="{{ url_for('static', filename='js/global_animations.js') }}"></script>
   </body>
 </html>

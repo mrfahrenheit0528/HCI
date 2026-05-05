@@ -1,0 +1,139 @@
+/* orus_home.html */
+
+body {
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.hero-home {
+  min-height: 70vh;
+  background-size: 120% auto;
+}
+
+/* Logic for arrows in "How It Works" */
+.step-card {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .step-card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -24px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #e2e8f0;
+  }
+
+  .step-card:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    right: -24px;
+    top: 50%;
+    margin-top: -4px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid #e2e8f0;
+  }
+}
+
+.page-transition {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hidden-page {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.active-page {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Service Card Icon Gradients */
+.icon-gradient {
+  background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* New Extracted Styles */
+
+.hero-badge {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.hero-badge__text {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 18rem;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: #244093;
+  transform: scale(1.03);
+}
+
+.assistance-card {
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  background-color: #03297b;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.assistance-card:hover {
+  transform: translateY(-4px);
+}
+
+.notice-banner {
+  margin-top: 3rem;
+  background-color: #f0f7ff;
+  border-left: 4px solid #03297b;
+  padding: 1.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}

@@ -1,0 +1,30 @@
+/* faqs_orus.html */
+
+/* Accordion transition for smooth toggle */
+.accordion-content {
+  transition:
+    max-height 0.3s ease-in-out,
+    opacity 0.3s ease-in-out,
+    padding 0.3s ease-in-out;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.accordion-content.expanded {
+  max-height: 500px;
+  opacity: 1;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.accordion-button.active {
+  background-color: #eef2ff;
+}
+
+.accordion-button.active .accordion-icon {
+  transform: rotate(180deg);
+}
+

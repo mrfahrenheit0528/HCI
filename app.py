@@ -30,4 +30,4 @@ def page(filename: str):
 
 
 if __name__ == "__main__":
-    app.run(host="[IP_ADDRESS]", debug=True)
+    app.run(debug=True)

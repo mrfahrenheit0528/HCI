@@ -25,6 +25,14 @@
       <section class="auth-visual">
         <div class="auth-visual-bg"></div>
         <div class="auth-visual-content">
+          <div class="mb-10">
+            <a href="orus_home.html" class="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors group">
+              <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              <span class="text-[10px] font-black uppercase tracking-[0.2em]">Back to Home</span>
+            </a>
+          </div>
           <a href="orus_home.html" class="flex items-center justify-center gap-3 mb-12 group">
             <div
               class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform"
@@ -68,7 +76,13 @@
       <section class="auth-form-container">
         <div class="auth-card">
           <!-- Mobile Logo (only visible on mobile) -->
-          <div class="lg:hidden flex justify-center mb-8">
+          <div class="lg:hidden flex flex-col items-center mb-8">
+            <a href="orus_home.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-[#03297b] transition-colors group mb-6">
+              <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              <span class="text-[10px] font-black uppercase tracking-[0.2em]">Back to Home</span>
+            </a>
             <img
               src="{{ url_for('static', filename='images/portax_logo.png') }}"
               alt="Logo"

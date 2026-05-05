@@ -17,8 +17,7 @@
   </head>
 
   <body class="min-h-screen flex flex-col">
-    <!-- TOP NAVIGATION -->
-    {% include "partials/topnavbar.html" %}
+    <!-- TOP NAVIGATION REMOVED FOR FORMS -->
 
     <div class="flex-grow flex flex-col">
       <!-- Header Section -->
@@ -34,12 +33,24 @@
           class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-red-500/10 rounded-full blur-3xl -translate-x-1/4 translate-y-1/4"
         ></div>
 
-        <div class="max-w-7xl mx-auto relative z-10 text-center">
-          <h1 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">
-            Retrieve TIN
-          </h1>
+        <div class="max-w-7xl mx-auto relative z-10 mb-8">
+          <a href="/" class="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors group">
+            <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            <span class="text-xs font-black uppercase tracking-widest">Back to Home</span>
+          </a>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+          <div class="flex items-center justify-center gap-6">
+            
+            <h1 class="text-3xl md:text-5xl font-black tracking-tight">
+              Retrieve TIN
+            </h1>
+          </div>
           <p
-            class="text-blue-100 opacity-90 max-w-2xl mx-auto text-sm md:text-base leading-relaxed"
+            class="text-blue-100 opacity-90 max-w-2xl mx-auto text-sm md:text-base leading-relaxed text-center mt-6"
           >
             Recover your existing Tax Identification Number by verifying your
             personal identity.

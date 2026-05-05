@@ -7,7 +7,17 @@ body {
 
 .hero-home {
   min-height: 70vh;
-  background-size: 120% auto;
+  background-size: cover;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-home {
+    min-height: 85vh;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 /* Logic for arrows in "How It Works" */
@@ -76,18 +86,33 @@ body {
   display: inline-block;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 9999px;
-  padding: 0.5rem 1.5rem;
-  margin-bottom: 2rem;
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.5rem;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  max-width: 90%;
+}
+
+@media (min-width: 768px) {
+  .hero-badge {
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .hero-badge__text {
   color: #ffffff;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hero-badge__text {
+    font-size: 12px;
+  }
 }
 
 .service-card {

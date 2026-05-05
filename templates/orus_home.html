@@ -26,11 +26,8 @@
         <div class="absolute inset-0 bir-gradient-overlay"></div>
 
         <div class="relative z-10 max-w-4xl pt-10">
-          <div
-            class="inline-block border border-white/40 rounded-full px-6 py-2 mb-8 backdrop-blur-sm"
-          >
-            <span
-              class="text-white text-[12px] font-bold uppercase tracking-widest"
+          <div class="hero-badge">
+            <span class="hero-badge__text"
               >Online Tax Registration and Update System</span
             >
           </div>
@@ -58,34 +55,37 @@
             >
               Get Started
             </a>
-            <button
-              class="w-full sm:w-auto bg-[#011a4d] text-white px-10 py-4 rounded font-bold hover:bg-black transition-all border border-white/20"
+            <a
+              href="https://www.bir.gov.ph/home"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full sm:w-auto bg-[#03297b] text-white px-10 py-4 rounded font-bold hover:bg-blue-900 transition-all shadow-xl block text-center"
             >
               Visit BIR Official Website
-            </button>
+            </a>
           </div>
 
           <div class="mt-16 flex items-center justify-center gap-12 md:gap-24">
             <div class="text-center">
-              <div class="text-white text-2xl font-bold">500K+</div>
+              <div class="text-white text-3xl font-bold">500K+</div>
               <div
-                class="text-white/50 text-[10px] uppercase font-bold tracking-widest"
+                class="text-white/50 text-[12px] uppercase font-bold tracking-widest"
               >
                 Registered Users
               </div>
             </div>
             <div class="text-center">
-              <div class="text-white text-2xl font-bold">99.9%</div>
+              <div class="text-white text-3xl font-bold">99.9%</div>
               <div
-                class="text-white/50 text-[10px] uppercase font-bold tracking-widest"
+                class="text-white/50 text-[12px] uppercase font-bold tracking-widest"
               >
                 Uptime
               </div>
             </div>
             <div class="text-center">
-              <div class="text-white text-2xl font-bold">24/7</div>
+              <div class="text-white text-3xl font-bold">24/7</div>
               <div
-                class="text-white/50 text-[10px] uppercase font-bold tracking-widest"
+                class="text-white/50 text-[12px] uppercase font-bold tracking-widest"
               >
                 Availability
               </div>
@@ -95,7 +95,7 @@
       </section>
 
       <!-- Our Services Section -->
-      <section class="max-w-7xl mx-auto px-6 py-24">
+      <section id="services" class="max-w-7xl mx-auto px-6 py-24">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-black text-[#03297b] mb-4">
             What would you like to do?
@@ -108,14 +108,14 @@
 
         <!-- Horizontally Scrollable Services Row -->
         <div
-          class="flex items-stretch overflow-x-auto gap-4 pb-6 snap-x relative z-20 w-full no-scrollbar"
+          class="flex items-stretch overflow-x-auto gap-4 py-6 px-4 snap-x relative z-20 w-full no-scrollbar"
         >
           <!-- Hide scrollbar WebKit -->
 
           <!-- Service 1 -->
           <a
             href="new_registration.html"
-            class="bg-white p-6 rounded-xl border border-slate-100 card-shadow cursor-pointer group flex-shrink-0 w-72 snap-start flex flex-col hover:border-[#244093] transition-colors"
+            class="service-card group"
           >
             <div
               class="w-12 h-12 rounded-xl mb-6 flex items-center justify-center icon-gradient shadow-inner"
@@ -142,7 +142,7 @@
               Register as a new taxpayer and create your official tax record.
             </p>
             <span
-              class="text-[#03297b] text-[10px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
+              class="text-[#03297b] text-[12px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
               >LEARN MORE &rarr;</span
             >
           </a>
@@ -150,7 +150,7 @@
           <!-- Service 2 -->
           <a
             href="secondary_registration.html"
-            class="bg-white p-6 rounded-xl border border-slate-100 card-shadow cursor-pointer group flex-shrink-0 w-72 snap-start flex flex-col hover:border-[#244093] transition-colors"
+            class="service-card group"
           >
             <div
               class="w-12 h-12 rounded-xl mb-6 flex items-center justify-center icon-gradient shadow-inner"
@@ -182,7 +182,7 @@
               regulatory requirements.
             </p>
             <span
-              class="text-[#03297b] text-[10px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
+              class="text-[#03297b] text-[13px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
               >LEARN MORE &rarr;</span
             >
           </a>
@@ -190,7 +190,7 @@
           <!-- Service 3 -->
           <a
             href="update_registration.html"
-            class="bg-white p-6 rounded-xl border border-slate-100 card-shadow cursor-pointer group flex-shrink-0 w-72 snap-start flex flex-col hover:border-[#244093] transition-colors"
+            class="service-card group"
           >
             <div
               class="w-12 h-12 rounded-xl mb-6 flex items-center justify-center icon-gradient shadow-inner"
@@ -218,7 +218,7 @@
               taxpayer details.
             </p>
             <span
-              class="text-[#03297b] text-[10px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
+              class="text-[#03297b] text-[13px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
               >LEARN MORE &rarr;</span
             >
           </a>
@@ -226,7 +226,7 @@
           <!-- Service 4 -->
           <a
             href="tin_verification.html"
-            class="bg-white p-6 rounded-xl border border-slate-100 card-shadow cursor-pointer group flex-shrink-0 w-72 snap-start flex flex-col hover:border-[#244093] transition-colors"
+            class="service-card group"
           >
             <div
               class="w-12 h-12 rounded-xl mb-6 flex items-center justify-center icon-gradient shadow-inner"
@@ -258,7 +258,7 @@
               status.
             </p>
             <span
-              class="text-[#03297b] text-[10px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
+              class="text-[#03297b] text-[13px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
               >LEARN MORE &rarr;</span
             >
           </a>
@@ -266,7 +266,7 @@
           <!-- Service 5 -->
           <a
             href="add_branch_facility.html"
-            class="bg-white p-6 rounded-xl border border-slate-100 card-shadow cursor-pointer group flex-shrink-0 w-72 snap-start flex flex-col hover:border-[#244093] transition-colors"
+            class="service-card group"
           >
             <div
               class="w-12 h-12 rounded-xl mb-6 flex items-center justify-center icon-gradient shadow-inner"
@@ -295,7 +295,7 @@
               account.
             </p>
             <span
-              class="text-[#03297b] text-[10px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
+              class="text-[#03297b] text-[13px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
               >LEARN MORE &rarr;</span
             >
           </a>
@@ -303,7 +303,7 @@
           <!-- Service 6 -->
           <a
             href="retrieve_tin.html"
-            class="bg-white p-6 rounded-xl border border-slate-100 card-shadow cursor-pointer group flex-shrink-0 w-72 snap-start flex flex-col hover:border-[#244093] transition-colors"
+            class="service-card group"
           >
             <div
               class="w-12 h-12 rounded-xl mb-6 flex items-center justify-center icon-gradient shadow-inner"
@@ -331,16 +331,16 @@
               forgotten it.
             </p>
             <span
-              class="text-[#03297b] text-[10px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
+              class="text-[#03297b] text-[13px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
               >LEARN MORE &rarr;</span
             >
           </a>
         </div>
         <p
-          class="mt-8 text-center text-[11px] text-slate-400 font-bold uppercase tracking-widest"
+          class="mt-8 text-center text-[13px] text-slate-400 font-bold uppercase tracking-widest"
         >
           Need help deciding?
-          <a href="#" class="text-[#03297b] border-b border-blue-200"
+          <a href="#assistance" class="text-[#03297b] border-b border-blue-200"
             >Contact our support team</a
           >
         </p>
@@ -361,155 +361,164 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Step 01 -->
             <div
-              class="step-card bg-white p-8 rounded-xl border border-slate-100 shadow-sm"
+              class="step-card bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-[0_0_25px_rgba(3,41,123,0.2)] transition-all"
             >
-              <div
-                class="w-10 h-10 bg-blue-900 text-white rounded flex items-center justify-center font-black mb-6"
-              >
-                01
-              </div>
-              <div
-                class="w-12 h-12 bg-slate-50 rounded flex items-center justify-center mb-4 text-slate-600"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+              <div class="flex items-center gap-4 mb-6">
+                <div
+                  class="w-10 h-10 bg-blue-900 text-white rounded flex items-center justify-center font-black shrink-0"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
-                  />
-                </svg>
+                  01
+                </div>
+                <div
+                  class="w-12 h-12 bg-white border border-slate-200 rounded flex items-center justify-center text-slate-600 shadow-sm"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                    />
+                  </svg>
+                </div>
               </div>
               <h4 class="font-black text-[#1e293b] mb-2">Create Account</h4>
-              <p class="text-xs text-slate-400 leading-relaxed">
+              <p class="text-sm text-slate-400 leading-relaxed">
                 Sign up with your email and create a secure password
               </p>
             </div>
 
             <!-- Step 02 -->
             <div
-              class="step-card bg-white p-8 rounded-xl border border-slate-100 shadow-sm"
+              class="step-card bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-[0_0_25px_rgba(3,41,123,0.2)] transition-all"
             >
-              <div
-                class="w-10 h-10 bg-blue-900 text-white rounded flex items-center justify-center font-black mb-6"
-              >
-                02
-              </div>
-              <div
-                class="w-12 h-12 bg-slate-50 rounded flex items-center justify-center mb-4 text-slate-600"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+              <div class="flex items-center gap-4 mb-6">
+                <div
+                  class="w-10 h-10 bg-blue-900 text-white rounded flex items-center justify-center font-black shrink-0"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
+                  02
+                </div>
+                <div
+                  class="w-12 h-12 bg-white border border-slate-200 rounded flex items-center justify-center text-slate-600 shadow-sm"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                </div>
               </div>
               <h4 class="font-black text-[#1e293b] mb-2">Fill Application</h4>
-              <p class="text-xs text-slate-400 leading-relaxed">
+              <p class="text-sm text-slate-400 leading-relaxed">
                 Complete your registration form with accurate information
               </p>
             </div>
 
             <!-- Step 03 -->
             <div
-              class="step-card bg-white p-8 rounded-xl border border-slate-100 shadow-sm"
+              class="step-card bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-[0_0_25px_rgba(3,41,123,0.2)] transition-all"
             >
-              <div
-                class="w-10 h-10 bg-blue-900 text-white rounded flex items-center justify-center font-black mb-6"
-              >
-                03
-              </div>
-              <div
-                class="w-12 h-12 bg-slate-50 rounded flex items-center justify-center mb-4 text-slate-600"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+              <div class="flex items-center gap-4 mb-6">
+                <div
+                  class="w-10 h-10 bg-blue-900 text-white rounded flex items-center justify-center font-black shrink-0"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
-                  />
-                </svg>
+                  03
+                </div>
+                <div
+                  class="w-12 h-12 bg-white border border-slate-200 rounded flex items-center justify-center text-slate-600 shadow-sm"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
+                    />
+                  </svg>
+                </div>
               </div>
               <h4 class="font-black text-[#1e293b] mb-2">Upload Documents</h4>
-              <p class="text-xs text-slate-400 leading-relaxed">
+              <p class="text-sm text-slate-400 leading-relaxed">
                 Submit required documents and supporting files
               </p>
             </div>
 
             <!-- Step 04 -->
             <div
-              class="step-card bg-white p-8 rounded-xl border border-slate-100 shadow-sm"
+              class="step-card bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-[0_0_25px_rgba(3,41,123,0.2)] transition-all"
             >
-              <div
-                class="w-10 h-10 bg-blue-900 text-white rounded flex items-center justify-center font-black mb-6"
-              >
-                04
-              </div>
-              <div
-                class="w-12 h-12 bg-slate-50 rounded flex items-center justify-center mb-4 text-slate-600"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+              <div class="flex items-center gap-4 mb-6">
+                <div
+                  class="w-10 h-10 bg-blue-900 text-white rounded flex items-center justify-center font-black shrink-0"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                  />
-                </svg>
+                  04
+                </div>
+                <div
+                  class="w-12 h-12 bg-white border border-slate-200 rounded flex items-center justify-center text-slate-600 shadow-sm"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    />
+                  </svg>
+                </div>
               </div>
               <h4 class="font-black text-[#1e293b] mb-2">Track Status</h4>
-              <p class="text-xs text-slate-400 leading-relaxed">
+              <p class="text-sm text-slate-400 leading-relaxed">
                 Monitor your application progress in real-time
               </p>
             </div>
           </div>
 
           <div class="mt-16 flex justify-center">
-            <button
-              class="bg-[#03297b] text-white px-10 py-4 rounded font-bold uppercase tracking-wider text-xs shadow-xl hover:bg-blue-900"
+            <a
+              href="#services"
+              class="bg-[#03297b] text-white px-10 py-5 rounded font-bold uppercase tracking-wider text-sm shadow-xl hover:bg-blue-900 block text-center"
             >
               Start Your Application Now
-            </button>
+            </a>
           </div>
         </div>
       </section>
 
       <!-- NEED ASSISTANCE SECTION -->
-      <section class="max-w-7xl mx-auto px-6 py-24 md:px-24">
+      <section id="assistance" class="max-w-7xl mx-auto px-6 py-24 md:px-24">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-black text-[#1e293b] mb-4">
             Need Assistance?
@@ -521,11 +530,9 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <!-- Assistance Cards -->
-          <div
-            class="p-8 border border-slate-100 rounded-xl bg-white shadow-sm flex flex-col items-start"
-          >
+          <div class="assistance-card group">
             <div
-              class="w-10 h-10 bg-slate-50 rounded flex items-center justify-center mb-6 text-slate-600"
+              class="w-10 h-10 bg-white/10 rounded flex items-center justify-center mb-6 text-white border border-white/10"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -542,22 +549,20 @@
                 />
               </svg>
             </div>
-            <h4 class="font-black text-slate-900 text-sm mb-2">Help Center</h4>
-            <p class="text-[11px] text-slate-400 mb-6 leading-relaxed">
+            <h4 class="font-black text-white text-lg mb-2">Help Center</h4>
+            <p class="text-sm text-white/60 mb-6 leading-relaxed">
               Browse our comprehensive FAQ and guides
             </p>
             <a
               href="#"
-              class="mt-auto text-blue-700 text-[10px] font-black uppercase tracking-widest flex items-center gap-2"
+              class="mt-auto text-yellow-400 text-xs font-black uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all"
               >Visit Help Center &rarr;</a
             >
           </div>
 
-          <div
-            class="p-8 border border-slate-100 rounded-xl bg-white shadow-sm flex flex-col items-start"
-          >
+          <div class="assistance-card group">
             <div
-              class="w-10 h-10 bg-slate-50 rounded flex items-center justify-center mb-6 text-slate-600"
+              class="w-10 h-10 bg-white/10 rounded flex items-center justify-center mb-6 text-white border border-white/10"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -574,22 +579,20 @@
                 />
               </svg>
             </div>
-            <h4 class="font-black text-slate-900 text-sm mb-2">Call Us</h4>
-            <p class="text-[11px] text-slate-400 mb-6 leading-relaxed">
+            <h4 class="font-black text-white text-lg mb-2">Call Us</h4>
+            <p class="text-sm text-white/60 mb-6 leading-relaxed">
               (02) 8538-3200 | Mon-Fri, 8AM-5PM
             </p>
             <a
               href="#"
-              class="mt-auto text-blue-700 text-[10px] font-black uppercase tracking-widest flex items-center gap-2"
+              class="mt-auto text-yellow-400 text-xs font-black uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all"
               >Call Now &rarr;</a
             >
           </div>
 
-          <div
-            class="p-8 border border-slate-100 rounded-xl bg-white shadow-sm flex flex-col items-start"
-          >
+          <div class="assistance-card group">
             <div
-              class="w-10 h-10 bg-slate-50 rounded flex items-center justify-center mb-6 text-slate-600"
+              class="w-10 h-10 bg-white/10 rounded flex items-center justify-center mb-6 text-white border border-white/10"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -606,24 +609,22 @@
                 />
               </svg>
             </div>
-            <h4 class="font-black text-slate-900 text-sm mb-2">
+            <h4 class="font-black text-white text-lg mb-2">
               Email Support
             </h4>
-            <p class="text-[11px] text-slate-400 mb-6 leading-relaxed">
+            <p class="text-sm text-white/60 mb-6 leading-relaxed">
               orus.support@bir.gov.ph
             </p>
             <a
               href="#"
-              class="mt-auto text-blue-700 text-[10px] font-black uppercase tracking-widest flex items-center gap-2"
+              class="mt-auto text-yellow-400 text-xs font-black uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all"
               >Send Email &rarr;</a
             >
           </div>
 
-          <div
-            class="p-8 border border-slate-100 rounded-xl bg-white shadow-sm flex flex-col items-start"
-          >
+          <div class="assistance-card group">
             <div
-              class="w-10 h-10 bg-slate-50 rounded flex items-center justify-center mb-6 text-slate-600"
+              class="w-10 h-10 bg-white/10 rounded flex items-center justify-center mb-6 text-white border border-white/10"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -640,22 +641,20 @@
                 />
               </svg>
             </div>
-            <h4 class="font-black text-slate-900 text-sm mb-2">Live Chat</h4>
-            <p class="text-[11px] text-slate-400 mb-6 leading-relaxed">
+            <h4 class="font-black text-white text-lg mb-2">Live Chat</h4>
+            <p class="text-sm text-white/60 mb-6 leading-relaxed">
               Chat with our support team
             </p>
             <a
               href="#"
-              class="mt-auto text-blue-700 text-[10px] font-black uppercase tracking-widest flex items-center gap-2"
+              class="mt-auto text-yellow-400 text-xs font-black uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all"
               >Start Chat &rarr;</a
             >
           </div>
         </div>
 
         <!-- Important Notice Banner -->
-        <div
-          class="mt-12 bg-[#f0f7ff] border-l-4 border-[#03297b] p-6 rounded-r-lg flex items-start gap-4"
-        >
+        <div class="notice-banner">
           <div
             class="w-6 h-6 bg-[#03297b] text-white rounded-full flex items-center justify-center shrink-0 text-[10px] font-bold"
           >
@@ -663,11 +662,11 @@
           </div>
           <div>
             <h5
-              class="font-black text-[#03297b] text-xs uppercase tracking-widest mb-1"
+              class="font-black text-[#03297b] text-s uppercase tracking-widest mb-1"
             >
               Important Notice
             </h5>
-            <p class="text-[11px] text-[#1e293b] leading-relaxed">
+            <p class="text-[13px] text-[#1e293b] leading-relaxed">
               BIR will never ask for your password, OTP, or personal information
               via email or phone call. If you receive suspicious communications
               claiming to be from BIR, please report it immediately to our

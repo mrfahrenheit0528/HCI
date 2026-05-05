@@ -7,6 +7,10 @@
   --brand-secondary: #244093;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   font-family: "Inter", sans-serif;

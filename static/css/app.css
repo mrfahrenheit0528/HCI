@@ -1,0 +1,697 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import url("./components/topnavbar.css");
+
+.hero-home {
+  min-height: 70vh;
+  background-size: 120% auto;
+}
+
+/* about_orus.html */
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8fafc; /* Tailwind slate-50 */
+}
+
+.card-shadow {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+}
+
+.bir-gradient-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(144, 43, 43, 0.95) 0%,
+    rgba(3, 41, 123, 0.95) 100%
+  );
+}
+
+.hero-bg {
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* add_branch_facility.html */
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.bir-gradient-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(144, 43, 43, 0.85) 0%,
+    rgba(3, 41, 123, 0.9) 100%
+  );
+}
+
+.hero-bg {
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Modal Transitions */
+.modal-overlay {
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hidden-modal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hidden-modal .modal-content {
+  transform: scale(0.95) translateY(20px);
+}
+
+/* Card Hover Effects */
+.service-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(3, 41, 123, 0.15);
+  border-color: #03297b;
+}
+
+.service-icon-bg {
+  transition: all 0.5s ease;
+}
+
+.service-card:hover .service-icon-bg {
+  transform: scale(2.5);
+  opacity: 0.05;
+}
+
+.service-icon {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  color: #03297b;
+}
+
+/* digital_tin_id.html */
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.bir-gradient-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(144, 43, 43, 0.85) 0%,
+    rgba(3, 41, 123, 0.9) 100%
+  );
+}
+
+.hero-bg {
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card-shadow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Logic for arrows in "How It Works" */
+.step-card {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .step-card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -24px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #e2e8f0;
+  }
+
+  .step-card:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    right: -24px;
+    top: 50%;
+    margin-top: -4px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid #e2e8f0;
+  }
+}
+
+.page-transition {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hidden-page {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.active-page {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* faqs_orus.html */
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Premium Background Gradient */
+.bir-gradient-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(144, 43, 43, 0.95) 0%,
+    rgba(3, 41, 123, 0.95) 100%
+  );
+}
+
+.hero-bg {
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Accordion transition for smooth toggle */
+.accordion-content {
+  transition:
+    max-height 0.3s ease-in-out,
+    opacity 0.3s ease-in-out,
+    padding 0.3s ease-in-out;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.accordion-content.expanded {
+  max-height: 500px; /* arbitrary large value */
+  opacity: 1;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.accordion-button.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* new_registration.html */
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.bir-gradient-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(144, 43, 43, 0.85) 0%,
+    rgba(3, 41, 123, 0.9) 100%
+  );
+}
+
+.hero-bg {
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card-shadow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Flow Transitions */
+.step-transition {
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.hidden-step {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.active-step {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modal Transitions */
+.modal-overlay {
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hidden-modal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hidden-modal .modal-content {
+  transform: scale(0.95) translateY(20px);
+}
+
+/* Checkbox Customization */
+.custom-checkbox {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid #cbd5e1;
+  border-radius: 0.25em;
+  display: grid;
+  place-content: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.custom-checkbox::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em white;
+  background-color: white;
+  transform-origin: center;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.custom-checkbox:checked {
+  background-color: #03297b;
+  border-color: #03297b;
+}
+
+.custom-checkbox:checked::before {
+  transform: scale(1);
+}
+
+/* Radio Button Customization */
+.custom-radio {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid #cbd5e1;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.custom-radio::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #03297b;
+}
+
+.custom-radio:checked {
+  border-color: #03297b;
+}
+
+.custom-radio:checked::before {
+  transform: scale(1);
+}
+
+/* orus_home.html */
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.bir-gradient-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(144, 43, 43, 0.85) 0%,
+    rgba(3, 41, 123, 0.9) 100%
+  );
+}
+
+.hero-bg {
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card-shadow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Logic for arrows in "How It Works" */
+.step-card {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .step-card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -24px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #e2e8f0;
+  }
+
+  .step-card:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    right: -24px;
+    top: 50%;
+    margin-top: -4px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid #e2e8f0;
+  }
+}
+
+.page-transition {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hidden-page {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.active-page {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Service Card Icon Gradients */
+.icon-gradient {
+  background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+}
+
+/* orus_home.html */
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+
+/* retrieve_tin.html */
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+.bir-gradient-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(144, 43, 43, 0.85) 0%,
+    rgba(3, 41, 123, 0.9) 100%
+  );
+}
+
+.hero-bg {
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* secondary_registration.html */
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.bir-gradient-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(144, 43, 43, 0.85) 0%,
+    rgba(3, 41, 123, 0.9) 100%
+  );
+}
+
+.hero-bg {
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Modal Transitions */
+.modal-overlay {
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hidden-modal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hidden-modal .modal-content {
+  transform: scale(0.95) translateY(20px);
+}
+
+/* Card Hover Effects */
+.service-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(3, 41, 123, 0.15);
+  border-color: #03297b;
+}
+
+.service-icon-bg {
+  transition: all 0.5s ease;
+}
+
+.service-card:hover .service-icon-bg {
+  transform: scale(2.5);
+  opacity: 0.05;
+}
+
+.service-icon {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  color: #03297b;
+}
+
+/* tin_verification.html */
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.bir-gradient-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(144, 43, 43, 0.85) 0%,
+    rgba(3, 41, 123, 0.9) 100%
+  );
+}
+
+.hero-bg {
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Card Hover Effects */
+.service-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(3, 41, 123, 0.15);
+  border-color: #03297b;
+}
+
+.service-icon-bg {
+  transition: all 0.5s ease;
+}
+
+.service-card:hover .service-icon-bg {
+  transform: scale(2.5);
+  opacity: 0.05;
+}
+
+.service-icon {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  color: #03297b;
+}
+
+/* update_registration.html */
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.bir-gradient-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(144, 43, 43, 0.85) 0%,
+    rgba(3, 41, 123, 0.9) 100%
+  );
+}
+
+.hero-bg {
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Modal Transitions */
+.modal-overlay {
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hidden-modal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hidden-modal .modal-content {
+  transform: scale(0.95) translateY(20px);
+}
+
+/* Card Hover Effects */
+.service-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(3, 41, 123, 0.15);
+  border-color: #03297b;
+}
+
+.service-icon-bg {
+  transition: all 0.5s ease;
+}
+
+.service-card:hover .service-icon-bg {
+  transform: scale(2.5);
+  opacity: 0.05;
+}
+
+.service-icon {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  color: #03297b;
+}
+
+.accordion-button.active {
+  background-color: #eef2ff;
+}
+
+.input-base {
+  width: 100%;
+  border: 2px solid #f1f5f9;
+  padding: 1rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.input-base:focus {
+  border-color: #1d4ed8;
+}

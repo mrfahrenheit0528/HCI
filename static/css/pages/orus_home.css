@@ -1,0 +1,71 @@
+/* orus_home.html */
+
+body {
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.hero-home {
+  min-height: 70vh;
+  background-size: 120% auto;
+}
+
+/* Logic for arrows in "How It Works" */
+.step-card {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .step-card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -24px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #e2e8f0;
+  }
+
+  .step-card:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    right: -24px;
+    top: 50%;
+    margin-top: -4px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid #e2e8f0;
+  }
+}
+
+.page-transition {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hidden-page {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.active-page {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Service Card Icon Gradients */
+.icon-gradient {
+  background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

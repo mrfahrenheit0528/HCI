@@ -1,0 +1,103 @@
+/* new_registration.html */
+
+body {
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+/* Flow Transitions */
+.step-transition {
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.hidden-step {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.active-step {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#user-type-container.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Checkbox Customization */
+.custom-checkbox {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid #cbd5e1;
+  border-radius: 0.25em;
+  display: grid;
+  place-content: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.custom-checkbox::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em white;
+  background-color: white;
+  transform-origin: center;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.custom-checkbox:checked {
+  background-color: #03297b;
+  border-color: #03297b;
+}
+
+.custom-checkbox:checked::before {
+  transform: scale(1);
+}
+
+/* Radio Button Customization */
+.custom-radio {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid #cbd5e1;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.custom-radio::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #03297b;
+}
+
+.custom-radio:checked {
+  border-color: #03297b;
+}
+
+.custom-radio:checked::before {
+  transform: scale(1);
+}

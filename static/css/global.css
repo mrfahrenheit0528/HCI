@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import url("./components/topnavbar.css");
+@import url("./components/footer.css");
+
+:root {
+  --brand-primary: #03297b;
+  --brand-secondary: #244093;
+}
+
+html,
+body {
+  font-family: "Inter", sans-serif;
+}
+
+html.is-locked {
+  overflow: hidden;
+}
+
+.bir-gradient-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(144, 43, 43, 0.85) 0%,
+    rgba(3, 41, 123, 0.9) 100%
+  );
+}
+
+.hero-bg {
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.card-shadow {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+}
+
+/* Modal Transitions */
+.modal-overlay {
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hidden-modal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hidden-modal .modal-content {
+  transform: scale(0.95) translateY(20px);
+}
+
+/* Card Hover Effects */
+.service-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(3, 41, 123, 0.15);
+  border-color: var(--brand-primary);
+}
+
+.service-icon-bg {
+  transition: all 0.5s ease;
+}
+
+.service-card:hover .service-icon-bg {
+  transform: scale(2.5);
+  opacity: 0.05;
+}
+
+.service-icon {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  color: var(--brand-primary);
+}
+
+.input-base {
+  width: 100%;
+  border: 2px solid #f1f5f9;
+  padding: 1rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.input-base:focus {
+  border-color: #1d4ed8;
+}

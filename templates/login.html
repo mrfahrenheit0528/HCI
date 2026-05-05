@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - PorTaxPH Official Portal</title>
+    <meta
+      name="description"
+      content="Securely access your PorTaxPH account to manage your BIR registration and updates."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/global.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/pages/login.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/login.js') }}" defer></script>
+  </head>
+  <body>
+    <main class="auth-container">
+      <!-- Left Side: Visual Area -->
+      <section class="auth-visual">
+        <div class="auth-visual-bg"></div>
+        <div class="auth-visual-content">
+          <a href="orus_home.html" class="flex items-center gap-3 mb-12 group">
+            <div
+              class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
+            >
+              <img
+                src="{{ url_for('static', filename='images/portax_logo.png') }}"
+                alt="Logo"
+                class="w-8 h-8"
+              />
+            </div>
+            <span class="text-2xl font-black tracking-tighter text-white"
+              >PorTaxPH</span
+            >
+          </a>
+
+          <h1 class="text-5xl font-black mb-6 leading-tight">
+            Simplify Your <br />
+            <span class="text-yellow-400">Tax Registration</span>
+          </h1>
+          <p class="text-lg text-white/80 font-medium leading-relaxed mb-10">
+            Join thousands of Filipinos who have streamlined their BIR compliance
+            through our digital portal. Secure, fast, and accessible.
+          </p>
+
+          <div class="grid grid-cols-2 gap-6">
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+              <div class="text-3xl font-bold mb-1">99%</div>
+              <div class="text-xs uppercase font-bold tracking-widest text-white/60">Success Rate</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+              <div class="text-3xl font-bold mb-1">24/7</div>
+              <div class="text-xs uppercase font-bold tracking-widest text-white/60">Digital Support</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute bottom-12 left-12 z-20">
+          <p class="text-[10px] font-black uppercase tracking-[0.3em] text-white/40">
+            Official Portal of the Bureau of Internal Revenue
+          </p>
+        </div>
+      </section>
+
+      <!-- Right Side: Form Area -->
+      <section class="auth-form-container">
+        <div class="auth-card">
+          <!-- Mobile Logo (only visible on mobile) -->
+          <div class="lg:hidden flex justify-center mb-8">
+            <img
+              src="{{ url_for('static', filename='images/portax_logo.png') }}"
+              alt="Logo"
+              class="w-16 h-16"
+            />
+          </div>
+
+          <div class="text-center mb-10">
+            <h2 class="text-3xl font-black text-[#1e293b] mb-2">Welcome Back</h2>
+            <p class="text-slate-500 font-medium">Enter your details to continue</p>
+          </div>
+
+          <!-- Mode Toggle -->
+          <div class="form-toggle">
+            <button
+              class="toggle-btn is-active"
+              data-auth-toggle="login"
+              id="toggle-login"
+            >
+              Sign In
+            </button>
+            <button
+              class="toggle-btn"
+              data-auth-toggle="signup"
+              id="toggle-signup"
+            >
+              Create Account
+            </button>
+          </div>
+
+          <!-- Login Form -->
+          <div id="login-content" class="auth-mode-content is-active">
+            <form action="#" method="POST">
+              <div class="input-group">
+                <label class="input-label" for="login-email">Email Address</label>
+                <input
+                  type="email"
+                  id="login-email"
+                  class="input-field"
+                  placeholder="name@company.com"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <div class="flex justify-between items-center mb-2">
+                  <label class="input-label mb-0" for="login-password">Password</label>
+                  <a href="#" class="text-[11px] font-bold text-[#03297b] hover:underline">Forgot?</a>
+                </div>
+                <input
+                  type="password"
+                  id="login-password"
+                  class="input-field"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+              <div class="flex items-center gap-3 mb-8">
+                <input
+                  type="checkbox"
+                  id="remember"
+                  class="w-4 h-4 rounded border-slate-300 text-[#03297b] focus:ring-[#03297b]"
+                />
+                <label for="remember" class="text-sm text-slate-600 font-medium">Remember me</label>
+              </div>
+              <button type="submit" class="auth-btn">Sign In to Portal</button>
+            </form>
+          </div>
+
+          <!-- Signup Form -->
+          <div id="signup-content" class="auth-mode-content">
+            <form action="#" method="POST">
+              <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="input-group mb-0">
+                  <label class="input-label" for="first-name">First Name</label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    class="input-field"
+                    placeholder="Juan"
+                    required
+                  />
+                </div>
+                <div class="input-group mb-0">
+                  <label class="input-label" for="last-name">Last Name</label>
+                  <input
+                    type="text"
+                    id="last-name"
+                    class="input-field"
+                    placeholder="Dela Cruz"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="signup-email">Email Address</label>
+                <input
+                  type="email"
+                  id="signup-email"
+                  class="input-field"
+                  placeholder="name@company.com"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label class="input-label" for="signup-password">Create Password</label>
+                <input
+                  type="password"
+                  id="signup-password"
+                  class="input-field"
+                  placeholder="Min. 8 characters"
+                  required
+                />
+              </div>
+              <p class="text-[11px] text-slate-400 mb-8">
+                By creating an account, you agree to our
+                <a href="#" class="text-[#03297b] font-bold">Terms of Service</a> and
+                <a href="#" class="text-[#03297b] font-bold">Privacy Policy</a>.
+              </p>
+              <button type="submit" class="auth-btn">Create Official Account</button>
+            </form>
+          </div>
+
+          <!-- Social Login -->
+          <div class="social-login">
+            <p class="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">
+              Or continue with
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              <button class="social-btn">
+                <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-4 h-4" alt="Google" />
+                Google
+              </button>
+              <button class="social-btn">
+                <img src="https://www.svgrepo.com/show/448234/facebook.svg" class="w-4 h-4" alt="FB" />
+                Facebook
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,5 +1,191 @@
 /* faqs_orus.html */
 
+body {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding-bottom: 6rem; /* pb-24 */
+  color: #334155; /* text-slate-700 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+::selection {
+  background-color: #244093;
+  color: #ffffff;
+}
+
+.faq-hero {
+  position: relative;
+  width: 100%;
+  padding-top: 5rem; /* pt-20 */
+  padding-bottom: 12rem; /* pb-48 */
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .faq-hero {
+    padding-left: 6rem; /* px-24 */
+    padding-right: 6rem;
+  }
+}
+
+.faq-hero-shape {
+  position: absolute;
+  width: 24rem; /* w-96 */
+  height: 24rem;
+  border-radius: 9999px;
+  filter: blur(64px); /* blur-3xl */
+  z-index: 0;
+}
+
+.faq-hero-shape-top {
+  top: 0;
+  right: 0;
+  background-color: #ffffff;
+  opacity: 0.05;
+  transform: translateY(-50%) translateX(33.333333%);
+}
+
+.faq-hero-shape-bottom {
+  bottom: 0;
+  left: 0;
+  background-color: #244093;
+  opacity: 0.2;
+  transform: translateY(33.333333%) translateX(-50%);
+}
+
+.faq-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 48rem; /* max-w-3xl */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq-hero-title {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em; /* tracking-tight */
+}
+
+@media (min-width: 768px) {
+  .faq-hero-title {
+    font-size: 3rem; /* text-5xl */
+  }
+}
+
+.faq-hero-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 500;
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+@media (min-width: 768px) {
+  .faq-hero-subtitle {
+    font-size: 1.25rem; /* text-xl */
+  }
+}
+
+/* Accordion Section */
+.faq-accordion-section {
+  position: relative;
+  z-index: 20;
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem;
+  margin-top: -5rem; /* -mt-20 */
+  margin-bottom: 5rem; /* mb-20 */
+  max-width: 56rem; /* max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .faq-accordion-section {
+    padding-left: 1.5rem; /* px-6 */
+    padding-right: 1.5rem;
+  }
+}
+
+.faq-accordion-container {
+  background-color: #ffffff;
+  border-radius: 1.5rem; /* rounded-3xl */
+  border: 1px solid #f1f5f9;
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 200ms ease;
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-item:hover {
+  background-color: #f8fafc; /* hover:bg-slate-50 */
+}
+
+.accordion-button {
+  width: 100%;
+  text-align: left;
+  padding: 1.5rem; /* py-6 px-6 */
+  font-weight: 700;
+  color: #011a4d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 200ms ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .accordion-button {
+    padding-left: 2rem; /* px-8 */
+    padding-right: 2rem;
+  }
+}
+
+.accordion-button-text {
+  font-size: 15px;
+  line-height: 1.375; /* leading-snug */
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .accordion-button-text {
+    font-size: 1rem; /* sm:text-base */
+  }
+}
+
+.accordion-icon {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem;
+  color: #94a3b8; /* text-slate-400 */
+  transition: transform 300ms ease;
+  flex-shrink: 0;
+}
+
 /* Accordion transition for smooth toggle */
 .accordion-content {
   transition:
@@ -9,15 +195,45 @@
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .accordion-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .accordion-content.expanded {
-  max-height: 500px;
+  max-height: 1000px; /* Increased from 500px for longer lists */
   opacity: 1;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 0;
+  padding-bottom: 2rem; /* Added bottom padding when expanded */
+}
+
+.accordion-content-text {
+  color: #475569; /* text-slate-600 */
+  line-height: 1.625; /* leading-relaxed */
+  font-size: 0.875rem; /* text-sm */
+}
+
+@media (min-width: 768px) {
+  .accordion-content-text {
+    font-size: 1rem; /* md:text-base */
+  }
+}
+
+.accordion-content-list {
+  list-style-type: disc;
+  padding-left: 1.25rem; /* pl-5 */
+  margin-top: 0.5rem;
+}
+
+.accordion-content-list li + li {
+  margin-top: 0.5rem; /* space-y-2 */
 }
 
 .accordion-button.active {
@@ -27,4 +243,3 @@
 .accordion-button.active .accordion-icon {
   transform: rotate(180deg);
 }
-

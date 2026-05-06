@@ -19,21 +19,23 @@
     const setMobileOpen = (open) => {
       if (!toggleButton || !mobileOverlay) return;
       toggleButton.setAttribute("aria-expanded", open ? "true" : "false");
-      if (open) {
-        mobileOverlay.hidden = false;
-        document.documentElement.classList.add("is-locked");
-      } else {
-        mobileOverlay.hidden = true;
-        document.documentElement.classList.remove("is-locked");
-      }
+      mobileOverlay.classList.toggle("is-active", open);
     };
 
     if (toggleButton && mobileOverlay) {
-      toggleButton.addEventListener("click", () => setMobileOpen(true));
-      mobileOverlay.addEventListener("click", (e) => {
-        if (e.target === mobileOverlay) setMobileOpen(false);
+      toggleButton.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = toggleButton.getAttribute("aria-expanded") === "true";
+        setMobileOpen(!isOpen);
       });
-      mobileClose?.addEventListener("click", () => setMobileOpen(false));
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!mobileOverlay.contains(e.target) && !toggleButton.contains(e.target)) {
+          setMobileOpen(false);
+        }
+      });
+
       window.addEventListener("keydown", (e) => {
         if (e.key === "Escape") setMobileOpen(false);
       });

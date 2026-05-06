@@ -20,9 +20,7 @@
     ></script>
   </head>
 
-  <body
-    class="bg-[#f8fafc] min-h-screen pb-24 lg:pb-0 text-slate-700 antialiased selection:bg-[#244093] selection:text-white flex flex-col relative"
-  >
+  <body class="flex flex-col relative">
     <!-- Top Navigation Bar -->
     <!-- Unified Top Navigation Bar -->
     {% include "partials/topnavbar.html" %}
@@ -30,49 +28,33 @@
     <!-- Main Content -->
     <main class="flex-grow w-full">
       <!-- Hero Section -->
-      <section
-        class="hero-bg relative w-full pt-20 pb-48 px-6 md:px-24 flex flex-col items-center justify-center text-center overflow-hidden"
-      >
+      <section class="hero-bg faq-hero">
         <div class="absolute inset-0 bir-gradient-overlay z-0"></div>
         <!-- Decorative shapes -->
-        <div
-          class="absolute top-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"
-        ></div>
-        <div
-          class="absolute bottom-0 left-0 w-96 h-96 bg-[#244093] opacity-20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/2"
-        ></div>
+        <div class="faq-hero-shape faq-hero-shape-top"></div>
+        <div class="faq-hero-shape faq-hero-shape-bottom"></div>
 
-        <div class="relative z-10 max-w-3xl flex flex-col items-center">
-          <h1
-            class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight"
-          >
-            Frequently Asked Questions
-          </h1>
-          <p class="text-white/80 text-lg md:text-xl font-medium mb-8">
+        <div class="faq-hero-content reveal">
+          <h1 class="faq-hero-title">Frequently Asked Questions</h1>
+          <p class="faq-hero-subtitle">
             Find answers to common questions about the PorTaxPH platform.
           </p>
         </div>
       </section>
 
       <!-- Accordion Section (Negative Margin to overlap Hero) -->
-      <section
-        class="relative z-20 px-4 sm:px-6 -mt-32 mb-20 max-w-4xl mx-auto w-full"
-      >
+      <section class="faq-accordion-section reveal">
         <!-- Accordion Container -->
-        <div
-          class="bg-white rounded-3xl card-shadow border border-slate-100 overflow-hidden divide-y divide-slate-100"
-        >
+        <div class="faq-accordion-container card-shadow">
           <!-- FAQ Item 1 -->
-          <div class="accordion-item hover:bg-slate-50 transition-colors">
+          <div class="accordion-item">
             <button
-              class="accordion-button w-full text-left px-6 py-6 md:px-8 font-bold text-[#011a4d] flex justify-between items-center transition-colors"
+              class="accordion-button"
               onclick="toggleAccordion(this)"
             >
-              <span class="text-[15px] sm:text-base leading-snug pr-4"
-                >What is PorTaxPH?</span
-              >
+              <span class="accordion-button-text">What is PorTaxPH?</span>
               <svg
-                class="w-5 h-5 text-slate-400 accordion-icon transition-transform duration-300 shrink-0"
+                class="accordion-icon"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -85,8 +67,8 @@
                 />
               </svg>
             </button>
-            <div class="accordion-content px-6 md:px-8 mt-0 bg-white">
-              <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+            <div class="accordion-content">
+              <p class="accordion-content-text">
                 PorTaxPH or the Online Registration and Update System is a
                 web-based system that provides an end-to-end process for
                 registration of taxpayers and updating of their registration
@@ -97,16 +79,14 @@
           </div>
 
           <!-- FAQ Item 2 -->
-          <div class="accordion-item hover:bg-slate-50 transition-colors">
+          <div class="accordion-item">
             <button
-              class="accordion-button w-full text-left px-6 py-6 md:px-8 font-bold text-[#011a4d] flex justify-between items-center transition-colors"
+              class="accordion-button"
               onclick="toggleAccordion(this)"
             >
-              <span class="text-[15px] sm:text-base leading-snug pr-4"
-                >Who can Use PorTaxPH?</span
-              >
+              <span class="accordion-button-text">Who can Use PorTaxPH?</span>
               <svg
-                class="w-5 h-5 text-slate-400 accordion-icon transition-transform duration-300 shrink-0"
+                class="accordion-icon"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -119,8 +99,8 @@
                 />
               </svg>
             </button>
-            <div class="accordion-content px-6 md:px-8 mt-0 bg-white">
-              <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+            <div class="accordion-content">
+              <p class="accordion-content-text">
                 Any individual or non-individual taxpayer who wishes to register
                 with the BIR or update their existing registration information
                 can use PorTaxPH. This includes professionals, sole proprietors,
@@ -130,17 +110,17 @@
           </div>
 
           <!-- FAQ Item 3 -->
-          <div class="accordion-item hover:bg-slate-50 transition-colors">
+          <div class="accordion-item">
             <button
-              class="accordion-button w-full text-left px-6 py-6 md:px-8 font-bold text-[#011a4d] flex justify-between items-center transition-colors"
+              class="accordion-button"
               onclick="toggleAccordion(this)"
             >
-              <span class="text-[15px] sm:text-base leading-snug pr-4"
+              <span class="accordion-button-text"
                 >What are the transactions that can be applied through
                 PorTaxPH?</span
               >
               <svg
-                class="w-5 h-5 text-slate-400 accordion-icon transition-transform duration-300 shrink-0"
+                class="accordion-icon"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -153,10 +133,8 @@
                 />
               </svg>
             </button>
-            <div class="accordion-content px-6 md:px-8 mt-0 bg-white">
-              <ul
-                class="list-disc pl-5 space-y-2 text-slate-600 text-sm md:text-base"
-              >
+            <div class="accordion-content">
+              <ul class="accordion-content-text accordion-content-list">
                 <li>New Business Registration (Head Office and Branches)</li>
                 <li>Registration of Facilities</li>
                 <li>Updates of Registration Information</li>
@@ -167,16 +145,16 @@
           </div>
 
           <!-- FAQ Item 4 -->
-          <div class="accordion-item hover:bg-slate-50 transition-colors">
+          <div class="accordion-item">
             <button
-              class="accordion-button w-full text-left px-6 py-6 md:px-8 font-bold text-[#011a4d] flex justify-between items-center transition-colors"
+              class="accordion-button"
               onclick="toggleAccordion(this)"
             >
-              <span class="text-[15px] sm:text-base leading-snug pr-4"
+              <span class="accordion-button-text"
                 >How can I create an account in PorTaxPH?</span
               >
               <svg
-                class="w-5 h-5 text-slate-400 accordion-icon transition-transform duration-300 shrink-0"
+                class="accordion-icon"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -189,8 +167,8 @@
                 />
               </svg>
             </button>
-            <div class="accordion-content px-6 md:px-8 mt-0 bg-white">
-              <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+            <div class="accordion-content">
+              <p class="accordion-content-text">
                 You can create an account by clicking the "Log In / Register"
                 button on the portal homepage. You will need a valid email
                 address and your existing TIN (if already registered). For new
@@ -202,17 +180,17 @@
           </div>
 
           <!-- FAQ Item 5 -->
-          <div class="accordion-item hover:bg-slate-50 transition-colors">
+          <div class="accordion-item">
             <button
-              class="accordion-button w-full text-left px-6 py-6 md:px-8 font-bold text-[#011a4d] flex justify-between items-center transition-colors"
+              class="accordion-button"
               onclick="toggleAccordion(this)"
             >
-              <span class="text-[15px] sm:text-base leading-snug pr-4"
+              <span class="accordion-button-text"
                 >I have an existing TIN, but I cannot create an PorTaxPH
                 account. What is the next step?</span
               >
               <svg
-                class="w-5 h-5 text-slate-400 accordion-icon transition-transform duration-300 shrink-0"
+                class="accordion-icon"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -225,8 +203,8 @@
                 />
               </svg>
             </button>
-            <div class="accordion-content px-6 md:px-8 mt-0 bg-white">
-              <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+            <div class="accordion-content">
+              <p class="accordion-content-text">
                 If the system cannot validate your TIN during account creation,
                 you may need to visit your Revenue District Office (RDO) to
                 verify your registration status or resolve any data
@@ -240,7 +218,6 @@
     </main>
 
     {% include "partials/footer.html" %}
-
-    <!-- Accordion Script -->
+    <script src="{{ url_for('static', filename='js/global_animations.js') }}"></script>
   </body>
 </html>

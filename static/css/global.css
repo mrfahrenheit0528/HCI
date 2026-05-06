@@ -102,3 +102,26 @@ html.is-locked {
 .input-base:focus {
   border-color: #1d4ed8;
 }
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0, 0, 1),
+    transform 0.8s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Transition specific containers but NOT backgrounds */
+.hero-content {
+  transition: none !important;
+}
+
+.hero-bg, .bir-gradient-overlay {
+  transition: none !important;
+}

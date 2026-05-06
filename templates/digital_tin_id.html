@@ -17,53 +17,55 @@
   </head>
 
   <body class="min-h-screen flex flex-col">
-    {% include "partials/topnavbar.html" %}
-
-    <div class="flex-grow bg-slate-50">
-      <div
-        class="hero-bg py-16 px-6 md:px-24 text-white relative overflow-hidden"
-      >
+    <!-- TOP NAVIGATION REMOVED FOR FORMS -->
+ 
+    <div class="tin-id-page-wrapper">
+      <div class="hero-bg tin-id-hero">
         <div class="absolute inset-0 bir-gradient-overlay z-0"></div>
-        <div class="max-w-7xl mx-auto relative z-10">
-          <h1 class="text-3xl md:text-5xl font-black mb-4">Digital TIN ID</h1>
-          <p class="text-blue-100 opacity-80 max-w-3xl text-sm md:text-base">
-            Generate your official digital TIN ID card.
-          </p>
+
+        <div class="tin-id-nav-container">
+          <a href="orus_home.html" class="tin-id-back-link group">
+            <svg class="tin-id-back-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            <span class="tin-id-back-text">Back to Home</span>
+          </a>
+        </div>
+
+        <div class="tin-id-header-container reveal">
+          <div class="flex items-center justify-center text-center">
+            <div>
+              <h1 class="tin-id-title">Digital TIN ID</h1>
+              <p class="tin-id-subtitle">
+                Generate your official digital TIN ID card.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="max-w-4xl mx-auto px-6 -mt-10 mb-24">
-        <div class="bg-white rounded shadow-2xl p-10 min-h-[400px]">
-          <div class="flex flex-col items-center py-10">
-            <div
-              class="w-full max-w-sm bg-blue-900 rounded-xl p-6 text-white mb-10 shadow-2xl relative overflow-hidden"
-            >
-              <div class="flex justify-between items-start mb-6">
-                <div class="text-[8px] font-black leading-tight uppercase">
+      <div class="tin-id-content-section reveal">
+        <div class="tin-id-card-white">
+          <div class="tin-id-display-area">
+            <div class="digital-tin-id-card">
+              <div class="tin-id-card-header">
+                <div class="tin-id-bir-text">
                   Bureau of Internal Revenue<br />Digital TIN ID
                 </div>
-                <div class="text-[8px] font-bold opacity-50">PorTaxPH</div>
+                <div class="tin-id-portax-text">PorTaxPH</div>
               </div>
-              <div class="flex gap-4 mb-6">
-                <div
-                  class="w-20 h-24 bg-white/10 rounded border border-white/20"
-                ></div>
+              <div class="tin-id-card-body">
+                <div class="tin-id-photo-placeholder"></div>
                 <div>
-                  <div class="text-[10px] font-bold mb-2">
-                    DELA CRUZ, JUAN P.
-                  </div>
-                  <div class="text-lg font-black tracking-widest">
-                    123-456-789
-                  </div>
+                  <div class="tin-id-name">DELA CRUZ, JUAN P.</div>
+                  <div class="tin-id-number">123-456-789</div>
                 </div>
               </div>
-              <div class="text-[7px] text-white/40">
+              <div class="tin-id-card-footer">
                 Verified On: 20 FEB 2024
               </div>
             </div>
-            <button
-              class="bg-[#03297b] text-white px-12 py-3 rounded font-bold uppercase tracking-widest text-xs"
-            >
+            <button class="download-id-btn">
               Download Digital ID
             </button>
           </div>
@@ -72,5 +74,6 @@
     </div>
 
     {% include "partials/footer.html" %}
+    <script src="{{ url_for('static', filename='js/global_animations.js') }}"></script>
   </body>
 </html>

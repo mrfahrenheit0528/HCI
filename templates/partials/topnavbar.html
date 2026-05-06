@@ -26,63 +26,38 @@
           >About</a
         >
         <a href="faqs_orus.html" class="topnav__link" data-topnav-link>FAQs</a>
-        <a href="digital_tin_id.html" class="topnav__link" data-topnav-link
-          >Digital TIN ID</a
-        >
       </div>
 
       <a href="login.html" class="topnav__login">Login</a>
     </div>
+    <!-- Mobile Dropdown Menu -->
+    <div class="topnav__mobile" data-topnav-mobile>
+      <div class="topnav__mobile-links">
+        <a
+          href="orus_home.html"
+          class="topnav__mobile-link"
+          data-topnav-mobile-link
+          >Home</a
+        >
+        <a
+          href="about_orus.html"
+          class="topnav__mobile-link"
+          data-topnav-mobile-link
+          >About</a
+        >
+        <a
+          href="faqs_orus.html"
+          class="topnav__mobile-link"
+          data-topnav-mobile-link
+          >FAQs</a
+        >
+        <div class="topnav__mobile-footer">
+          <a href="login.html" class="topnav__mobile-cta">Login</a>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
-
-<div class="topnav__mobile" data-topnav-mobile hidden>
-  <div
-    class="topnav__mobile-panel"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Site menu"
-  >
-    <div class="topnav__mobile-header">
-      <span class="topnav__mobile-title">Menu</span>
-      <button
-        class="topnav__mobile-close"
-        type="button"
-        aria-label="Close menu"
-        data-topnav-close
-      >
-        Close
-      </button>
-    </div>
-    <div class="topnav__mobile-links">
-      <a
-        href="orus_home.html"
-        class="topnav__mobile-link"
-        data-topnav-mobile-link
-        >Home</a
-      >
-      <a
-        href="about_orus.html"
-        class="topnav__mobile-link"
-        data-topnav-mobile-link
-        >About</a
-      >
-      <a
-        href="faqs_orus.html"
-        class="topnav__mobile-link"
-        data-topnav-mobile-link
-        >FAQs</a
-      >
-      <a
-        href="digital_tin_id.html"
-        class="topnav__mobile-link"
-        data-topnav-mobile-link
-        >Digital TIN ID</a
-      >
-      <a href="login.html" class="topnav__mobile-cta">Login</a>
-    </div>
-  </div>
-</div>
 <script
   defer
   src="{{ url_for('static', filename='js/topnavbar.js') }}"

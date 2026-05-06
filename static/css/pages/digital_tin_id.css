@@ -4,3 +4,211 @@ body {
   background-color: #ffffff;
   color: #1e293b;
 }
+
+.tin-id-page-wrapper {
+  flex-grow: 1;
+  background-color: #f8fafc; /* bg-slate-50 */
+}
+
+.tin-id-hero {
+  padding-top: 4rem; /* py-16 */
+  padding-bottom: 4rem;
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .tin-id-hero {
+    padding-left: 6rem; /* px-24 */
+    padding-right: 6rem;
+  }
+}
+
+.tin-id-nav-container {
+  max-width: 80rem; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+.tin-id-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 200ms ease;
+  text-decoration: none;
+}
+
+.tin-id-back-link:hover {
+  color: #ffffff;
+}
+
+.tin-id-back-arrow {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 200ms ease;
+}
+
+.tin-id-back-link:hover .tin-id-back-arrow {
+  transform: translateX(-0.25rem);
+}
+
+.tin-id-back-text {
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.tin-id-header-container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 10;
+}
+
+.tin-id-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 900;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.025em; /* tracking-tight */
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .tin-id-title {
+    font-size: 3rem; /* text-5xl */
+  }
+}
+
+.tin-id-subtitle {
+  color: #dbeafe; /* text-blue-100 */
+  opacity: 0.8;
+  max-width: 48rem; /* max-w-3xl */
+  font-size: 0.875rem; /* text-sm */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .tin-id-subtitle {
+    font-size: 1rem; /* text-base */
+  }
+}
+
+/* Card Section */
+.tin-id-content-section {
+  max-width: 56rem; /* max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: -2.5rem; /* -mt-10 */
+  margin-bottom: 6rem; /* mb-24 */
+}
+
+.tin-id-card-white {
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 2.5rem; /* p-10 */
+  min-height: 400px;
+}
+
+.tin-id-display-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.digital-tin-id-card {
+  width: 100%;
+  max-width: 24rem; /* max-w-sm */
+  background-color: #1e3a8a; /* bg-blue-900 */
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 1.5rem; /* p-6 */
+  color: #ffffff;
+  margin-bottom: 2.5rem; /* mb-10 */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.tin-id-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.tin-id-bir-text {
+  font-size: 8px;
+  font-weight: 900;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.tin-id-portax-text {
+  font-size: 8px;
+  font-weight: 700;
+  opacity: 0.5;
+}
+
+.tin-id-card-body {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tin-id-photo-placeholder {
+  width: 5rem; /* w-20 */
+  height: 6rem; /* h-24 */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tin-id-name {
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.tin-id-number {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 900;
+  letter-spacing: 0.1em; /* tracking-widest */
+}
+
+.tin-id-card-footer {
+  font-size: 7px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.download-id-btn {
+  background-color: #03297b;
+  color: #ffffff;
+  padding: 0.75rem 3rem; /* py-3 px-12 */
+  border-radius: 0.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.download-id-btn:hover {
+  background-color: #1e3a8a;
+}

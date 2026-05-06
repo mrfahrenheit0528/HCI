@@ -25,46 +25,42 @@
       <section class="auth-visual">
         <div class="auth-visual-bg"></div>
         <div class="auth-visual-content">
-          <div class="mb-10">
-            <a href="orus_home.html" class="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors group">
-              <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div>
+            <a href="orus_home.html" class="auth-back-link group">
+              <svg class="auth-back-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              <span class="text-[10px] font-black uppercase tracking-[0.2em]">Back to Home</span>
+              <span class="auth-back-text">Back to Home</span>
             </a>
           </div>
-          <a href="orus_home.html" class="flex items-center justify-center gap-3 mb-12 group">
-            <div
-              class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform"
-            >
+          <a href="orus_home.html" class="auth-brand-link group">
+            <div class="auth-brand-logo-container">
               <img
                 src="{{ url_for('static', filename='images/portax_logo.png') }}"
                 alt="Logo"
-                class="w-9 h-9"
+                class="auth-brand-logo"
               />
             </div>
-            <span class="text-3xl font-black tracking-tighter text-white"
-              >PorTaxPH</span
-            >
+            <span class="auth-brand-text">PorTaxPH</span>
           </a>
 
-          <h1 class="text-5xl font-black mb-6 leading-tight">
+          <h1 class="auth-visual-title">
             Simplify Your <br />
-            <span class="text-yellow-400">Tax Registration</span>
+            <span class="auth-visual-highlight">Tax Registration</span>
           </h1>
-          <p class="text-lg text-white/80 font-medium leading-relaxed mb-10">
+          <p class="auth-visual-subtitle">
             Join thousands of Filipinos who have streamlined their BIR compliance
             through our digital portal. Secure, fast, and accessible.
           </p>
 
-          <div class="grid grid-cols-2 gap-6">
-            <div class="bg-white/10 backdrop-blur-md py-4 px-6 rounded-2xl border border-white/10">
-              <div class="text-3xl font-bold mb-1">99%</div>
-              <div class="text-xs uppercase font-bold tracking-widest text-white/60">Success Rate</div>
+          <div class="auth-stats-grid">
+            <div class="auth-stat-card">
+              <div class="auth-stat-value">99%</div>
+              <div class="auth-stat-label">Success Rate</div>
             </div>
-            <div class="bg-white/10 backdrop-blur-md py-4 px-6 rounded-2xl border border-white/10">
-              <div class="text-3xl font-bold mb-1">24/7</div>
-              <div class="text-xs uppercase font-bold tracking-widest text-white/60">Digital Support</div>
+            <div class="auth-stat-card">
+              <div class="auth-stat-value">24/7</div>
+              <div class="auth-stat-label">Digital Support</div>
             </div>
           </div>
         </div>
@@ -76,27 +72,27 @@
       <section class="auth-form-container">
         <div class="auth-card">
           <!-- Mobile Logo (only visible on mobile) -->
-          <div class="lg:hidden flex flex-col items-center mb-8">
-            <a href="orus_home.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-[#03297b] transition-colors group mb-6">
-              <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="mobile-logo-area">
+            <a href="orus_home.html" class="mobile-back-link group">
+              <svg class="auth-back-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              <span class="text-[10px] font-black uppercase tracking-[0.2em]">Back to Home</span>
+              <span class="auth-back-text">Back to Home</span>
             </a>
             <img
               src="{{ url_for('static', filename='images/portax_logo.png') }}"
               alt="Logo"
-              class="w-16 h-16"
+              class="mobile-logo"
             />
           </div>
 
-          <div class="text-center mb-10">
-            <h2 class="text-3xl font-black text-[#1e293b] mb-2">Welcome Back</h2>
-            <p class="text-slate-500 font-medium">Enter your details to continue</p>
+          <div class="auth-form-header">
+            <h2 class="auth-form-title">Welcome Back</h2>
+            <p class="auth-form-subtitle">Enter your details to continue</p>
           </div>
 
           <!-- Mode Toggle Removed -->
-          <div class="space-y-6">
+          <div class="auth-form-body">
             <!-- Login Form -->
             <div id="login-content" class="auth-mode-content is-active">
               <form action="#" method="POST">
@@ -120,26 +116,26 @@
                     required
                   />
                 </div>
-                <div class="flex items-center justify-between mb-8">
-                  <label class="flex items-center gap-2 cursor-pointer group">
+                <div class="form-actions">
+                  <label class="remember-me group">
                     <input
                       type="checkbox"
                       id="remember"
-                      class="w-4 h-4 rounded border-slate-300 text-[#03297b] focus:ring-[#03297b] cursor-pointer"
+                      class="remember-checkbox"
                     />
-                    <span class="text-xs text-slate-600 font-bold group-hover:text-slate-800 transition-colors">Remember me</span>
+                    <span class="remember-text">Remember me</span>
                   </label>
-                  <a href="#" class="text-xs font-bold text-[#03297b] hover:underline">Forgot Password?</a>
+                  <a href="#" class="forgot-password">Forgot Password?</a>
                 </div>
                 <button type="submit" class="auth-btn">Sign In to Portal</button>
               </form>
             </div>
 
             <!-- Create Account Link -->
-            <div class="pt-8 border-t border-slate-100 text-center">
-              <p class="text-sm text-slate-500 font-medium">
+            <div class="register-section">
+              <p class="register-text">
                 No account? 
-                <a href="new_registration.html" class="text-[#03297b] font-black hover:underline ml-1">
+                <a href="new_registration.html" class="register-link">
                   Register Now!
                 </a>
               </p>

@@ -25,101 +25,69 @@
       >
         <div class="absolute inset-0 bir-gradient-overlay"></div>
 
-        <div class="relative z-10 max-w-4xl pt-10 reveal">
+        <div class="hero-main-body reveal">
           <div class="hero-badge">
             <span class="hero-badge__text"
               >Online Tax Registration and Update System</span
             >
           </div>
 
-          <h1
-            class="text-white text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight"
-          >
+          <h1 class="hero-title">
             Register or Update Your Tax <br class="hidden md:block" />
             Information Online
           </h1>
 
-          <p
-            class="text-white/80 text-base md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed px-4 md:px-0"
-          >
+          <p class="hero-description">
             PorTaxPH - A faster, simpler, and more secure way to manage your BIR
             registration. Complete your application from anywhere, anytime.
           </p>
 
-          <div
-            class="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <a
-              href="new_registration.html"
-              class="w-full sm:w-auto bg-white text-[#03297b] px-10 py-4 rounded font-bold hover:bg-slate-100 hover:scale-105 active:scale-95 transition-all shadow-xl block text-center"
-            >
+          <div class="hero-actions">
+            <a href="new_registration.html" class="btn-hero btn-hero-primary">
               Get Started
             </a>
             <a
               href="https://www.bir.gov.ph/home"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-full sm:w-auto bg-[#03297b] text-white px-10 py-4 rounded font-bold hover:bg-blue-900 hover:scale-105 active:scale-95 transition-all shadow-xl block text-center"
+              class="btn-hero btn-hero-secondary"
             >
               Visit BIR Official Website
             </a>
           </div>
 
-          <div class="mt-12 md:mt-16 grid grid-cols-3 gap-4 md:gap-24">
-            <div class="text-center">
-              <div class="text-white text-xl md:text-4xl font-black">500K+</div>
-              <div
-                class="text-white/50 text-[9px] md:text-[12px] uppercase font-black tracking-widest mt-1"
-              >
-                Registered
-              </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-value">500K+</div>
+              <div class="stat-label">Registered</div>
             </div>
-            <div class="text-center">
-              <div class="text-white text-xl md:text-4xl font-black">99.9%</div>
-              <div
-                class="text-white/50 text-[9px] md:text-[12px] uppercase font-black tracking-widest mt-1"
-              >
-                Uptime
-              </div>
+            <div class="stat-item">
+              <div class="stat-value">99.9%</div>
+              <div class="stat-label">Uptime</div>
             </div>
-            <div class="text-center">
-              <div class="text-white text-xl md:text-4xl font-black">24/7</div>
-              <div
-                class="text-white/50 text-[9px] md:text-[12px] uppercase font-black tracking-widest mt-1"
-              >
-                Support
-              </div>
+            <div class="stat-item">
+              <div class="stat-value">24/7</div>
+              <div class="stat-label">Support</div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Our Services Section -->
-      <section id="services" class="max-w-7xl mx-auto px-6 py-24 reveal">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-black text-[#03297b] mb-4">
-            What would you like to do?
-          </h2>
-          <p class="text-slate-500 font-medium">
+      <section id="services" class="services-section reveal">
+        <div class="section-header">
+          <h2 class="section-title">What would you like to do?</h2>
+          <p class="section-subtitle">
             Choose from our quick actions to get started with your tax
             registration or updates
           </p>
         </div>
 
         <!-- Horizontally Scrollable Services Row -->
-        <div
-          class="flex items-stretch overflow-x-auto gap-4 py-6 px-4 snap-x relative z-20 w-full no-scrollbar"
-        >
-          <!-- Hide scrollbar WebKit -->
-
+        <div class="services-row no-scrollbar">
           <!-- Service 1 -->
-          <a
-            href="new_registration.html"
-            class="service-card group"
-          >
-            <div
-              class="w-12 h-12 rounded-xl mb-6 flex items-center justify-center icon-gradient shadow-inner"
-            >
+          <a href="new_registration.html" class="service-card group">
+            <div class="service-icon-container icon-gradient">
               <svg
                 class="w-6 h-6 text-yellow-400"
                 fill="currentColor"
@@ -131,30 +99,18 @@
                 <path d="M20 12v-3h-2v3h-3v2h3v3h2v-3h3v-2z" fill="#facc15" />
               </svg>
             </div>
-            <h3
-              class="text-xl font-black text-[#011a4d] mb-3 leading-tight tracking-tight"
-            >
-              New Registration
-            </h3>
-            <p
-              class="text-[13px] text-slate-500 mb-6 flex-grow leading-relaxed"
-            >
+            <h3 class="service-card-title">New Registration</h3>
+            <p class="service-card-description">
               Register as a new taxpayer and create your official tax record.
             </p>
-            <span
-              class="text-[#03297b] text-[12px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
+            <span class="service-card-link"
               >LEARN MORE &rarr;</span
             >
           </a>
 
           <!-- Service 2 -->
-          <a
-            href="secondary_registration.html"
-            class="service-card group"
-          >
-            <div
-              class="w-12 h-12 rounded-xl mb-6 flex items-center justify-center icon-gradient shadow-inner"
-            >
+          <a href="secondary_registration.html" class="service-card group">
+            <div class="service-icon-container icon-gradient">
               <svg
                 class="w-6 h-6 text-yellow-400"
                 fill="currentColor"
@@ -170,31 +126,19 @@
                 />
               </svg>
             </div>
-            <h3
-              class="text-xl font-black text-[#011a4d] mb-3 leading-tight tracking-tight"
-            >
-              Permits & Compliance
-            </h3>
-            <p
-              class="text-[13px] text-slate-500 mb-6 flex-grow leading-relaxed"
-            >
+            <h3 class="service-card-title">Permits & Compliance</h3>
+            <p class="service-card-description">
               Apply for permits, register books of accounts, and manage
               regulatory requirements.
             </p>
-            <span
-              class="text-[#03297b] text-[13px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
+            <span class="service-card-link"
               >LEARN MORE &rarr;</span
             >
           </a>
 
           <!-- Service 3 -->
-          <a
-            href="update_registration.html"
-            class="service-card group"
-          >
-            <div
-              class="w-12 h-12 rounded-xl mb-6 flex items-center justify-center icon-gradient shadow-inner"
-            >
+          <a href="update_registration.html" class="service-card group">
+            <div class="service-icon-container icon-gradient">
               <svg
                 class="w-6 h-6 text-yellow-400"
                 fill="currentColor"
@@ -206,31 +150,19 @@
                 />
               </svg>
             </div>
-            <h3
-              class="text-xl font-black text-[#011a4d] mb-3 leading-tight tracking-tight"
-            >
-              Update Details
-            </h3>
-            <p
-              class="text-[13px] text-slate-500 mb-6 flex-grow leading-relaxed"
-            >
+            <h3 class="service-card-title">Update Details</h3>
+            <p class="service-card-description">
               Modify your registration information, including business and
               taxpayer details.
             </p>
-            <span
-              class="text-[#03297b] text-[13px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
+            <span class="service-card-link"
               >LEARN MORE &rarr;</span
             >
           </a>
 
           <!-- Service 4 -->
-          <a
-            href="tin_verification.html"
-            class="service-card group"
-          >
-            <div
-              class="w-12 h-12 rounded-xl mb-6 flex items-center justify-center icon-gradient shadow-inner"
-            >
+          <a href="tin_verification.html" class="service-card group">
+            <div class="service-icon-container icon-gradient">
               <svg
                 class="w-6 h-6 text-yellow-400"
                 fill="none"
@@ -246,31 +178,19 @@
                 />
               </svg>
             </div>
-            <h3
-              class="text-xl font-black text-[#011a4d] mb-3 leading-tight tracking-tight"
-            >
-              Verify Registration
-            </h3>
-            <p
-              class="text-[13px] text-slate-500 mb-6 flex-grow leading-relaxed"
-            >
+            <h3 class="service-card-title">Verify Registration</h3>
+            <p class="service-card-description">
               Check the validity of a TIN or confirm a business registration
               status.
             </p>
-            <span
-              class="text-[#03297b] text-[13px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
+            <span class="service-card-link"
               >LEARN MORE &rarr;</span
             >
           </a>
 
           <!-- Service 5 -->
-          <a
-            href="add_branch_facility.html"
-            class="service-card group"
-          >
-            <div
-              class="w-12 h-12 rounded-xl mb-6 flex items-center justify-center icon-gradient shadow-inner"
-            >
+          <a href="add_branch_facility.html" class="service-card group">
+            <div class="service-icon-container icon-gradient">
               <svg
                 class="w-6 h-6 text-yellow-400"
                 fill="currentColor"
@@ -283,31 +203,19 @@
                 <path d="M20 12v3h-3v2h3v3h2v-3h3v-2h-3v-3z" fill="#facc15" />
               </svg>
             </div>
-            <h3
-              class="text-xl font-black text-[#011a4d] mb-3 leading-tight tracking-tight"
-            >
-              Add Branch / Facility
-            </h3>
-            <p
-              class="text-[13px] text-slate-500 mb-6 flex-grow leading-relaxed"
-            >
+            <h3 class="service-card-title">Add Branch / Facility</h3>
+            <p class="service-card-description">
               Register a new branch, facility, or place of business under your
               account.
             </p>
-            <span
-              class="text-[#03297b] text-[13px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
+            <span class="service-card-link"
               >LEARN MORE &rarr;</span
             >
           </a>
 
           <!-- Service 6 -->
-          <a
-            href="retrieve_tin.html"
-            class="service-card group"
-          >
-            <div
-              class="w-12 h-12 rounded-xl mb-6 flex items-center justify-center icon-gradient shadow-inner"
-            >
+          <a href="retrieve_tin.html" class="service-card group">
+            <div class="service-icon-container icon-gradient">
               <svg
                 class="w-6 h-6 text-yellow-400"
                 fill="currentColor"
@@ -319,59 +227,40 @@
                 />
               </svg>
             </div>
-            <h3
-              class="text-xl font-black text-[#011a4d] mb-3 leading-tight tracking-tight"
-            >
-              Retrieve TIN
-            </h3>
-            <p
-              class="text-[13px] text-slate-500 mb-6 flex-grow leading-relaxed"
-            >
+            <h3 class="service-card-title">Retrieve TIN</h3>
+            <p class="service-card-description">
               Recover your existing Tax Identification Number if you have
               forgotten it.
             </p>
-            <span
-              class="text-[#03297b] text-[13px] font-black uppercase tracking-widest flex items-center gap-1 mt-auto group-hover:gap-2 transition-all"
+            <span class="service-card-link"
               >LEARN MORE &rarr;</span
             >
           </a>
         </div>
-        <p
-          class="mt-8 text-center text-[10px] md:text-[13px] text-slate-400 font-black uppercase tracking-tight md:tracking-widest"
-        >
+        <p class="services-support-footer">
           Need help deciding?
-          <a href="#assistance" class="text-[#03297b] border-b border-blue-200"
+          <a href="#assistance" class="support-link"
             >Contact our support team</a
           >
         </p>
       </section>
 
       <!-- HOW IT WORKS SECTION -->
-      <section class="bg-slate-50 py-24 px-6 md:px-24 reveal">
+      <section class="how-it-works-section reveal">
         <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-black text-[#1e293b] mb-4">
-              How It Works
-            </h2>
-            <p class="text-slate-500 font-medium">
+          <div class="section-header">
+            <h2 class="section-title text-[#1e293b]">How It Works</h2>
+            <p class="section-subtitle">
               Complete your BIR registration in 4 simple steps
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="how-it-works-grid">
             <!-- Step 01 -->
-            <div
-              class="step-card bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-[0_0_25px_rgba(3,41,123,0.2)] transition-all"
-            >
-              <div class="flex items-center gap-4 mb-6">
-                <div
-                  class="w-10 h-10 bg-blue-900 text-white rounded flex items-center justify-center font-black shrink-0"
-                >
-                  01
-                </div>
-                <div
-                  class="w-12 h-12 bg-white border border-slate-200 rounded flex items-center justify-center text-slate-600 shadow-sm"
-                >
+            <div class="step-card">
+              <div class="step-card-header">
+                <div class="step-number">01</div>
+                <div class="step-icon-container">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-6 h-6"
@@ -388,25 +277,17 @@
                   </svg>
                 </div>
               </div>
-              <h4 class="font-black text-[#1e293b] mb-2">Create Account</h4>
-              <p class="text-sm text-slate-400 leading-relaxed">
+              <h4 class="step-card-title">Create Account</h4>
+              <p class="step-card-description">
                 Sign up with your email and create a secure password
               </p>
             </div>
 
             <!-- Step 02 -->
-            <div
-              class="step-card bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-[0_0_25px_rgba(3,41,123,0.2)] transition-all"
-            >
-              <div class="flex items-center gap-4 mb-6">
-                <div
-                  class="w-10 h-10 bg-blue-900 text-white rounded flex items-center justify-center font-black shrink-0"
-                >
-                  02
-                </div>
-                <div
-                  class="w-12 h-12 bg-white border border-slate-200 rounded flex items-center justify-center text-slate-600 shadow-sm"
-                >
+            <div class="step-card">
+              <div class="step-card-header">
+                <div class="step-number">02</div>
+                <div class="step-icon-container">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-6 h-6"
@@ -423,25 +304,17 @@
                   </svg>
                 </div>
               </div>
-              <h4 class="font-black text-[#1e293b] mb-2">Fill Application</h4>
-              <p class="text-sm text-slate-400 leading-relaxed">
+              <h4 class="step-card-title">Fill Application</h4>
+              <p class="step-card-description">
                 Complete your registration form with accurate information
               </p>
             </div>
 
             <!-- Step 03 -->
-            <div
-              class="step-card bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-[0_0_25px_rgba(3,41,123,0.2)] transition-all"
-            >
-              <div class="flex items-center gap-4 mb-6">
-                <div
-                  class="w-10 h-10 bg-blue-900 text-white rounded flex items-center justify-center font-black shrink-0"
-                >
-                  03
-                </div>
-                <div
-                  class="w-12 h-12 bg-white border border-slate-200 rounded flex items-center justify-center text-slate-600 shadow-sm"
-                >
+            <div class="step-card">
+              <div class="step-card-header">
+                <div class="step-number">03</div>
+                <div class="step-icon-container">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-6 h-6"
@@ -458,25 +331,17 @@
                   </svg>
                 </div>
               </div>
-              <h4 class="font-black text-[#1e293b] mb-2">Upload Documents</h4>
-              <p class="text-sm text-slate-400 leading-relaxed">
+              <h4 class="step-card-title">Upload Documents</h4>
+              <p class="step-card-description">
                 Submit required documents and supporting files
               </p>
             </div>
 
             <!-- Step 04 -->
-            <div
-              class="step-card bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-[0_0_25px_rgba(3,41,123,0.2)] transition-all"
-            >
-              <div class="flex items-center gap-4 mb-6">
-                <div
-                  class="w-10 h-10 bg-blue-900 text-white rounded flex items-center justify-center font-black shrink-0"
-                >
-                  04
-                </div>
-                <div
-                  class="w-12 h-12 bg-white border border-slate-200 rounded flex items-center justify-center text-slate-600 shadow-sm"
-                >
+            <div class="step-card">
+              <div class="step-card-header">
+                <div class="step-number">04</div>
+                <div class="step-icon-container">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-6 h-6"
@@ -499,18 +364,15 @@
                   </svg>
                 </div>
               </div>
-              <h4 class="font-black text-[#1e293b] mb-2">Track Status</h4>
-              <p class="text-sm text-slate-400 leading-relaxed">
+              <h4 class="step-card-title">Track Status</h4>
+              <p class="step-card-description">
                 Monitor your application progress in real-time
               </p>
             </div>
           </div>
 
-          <div class="mt-16 flex justify-center">
-            <a
-              href="#services"
-              class="bg-[#03297b] text-white px-10 py-5 rounded font-bold uppercase tracking-wider text-sm shadow-xl hover:bg-blue-900 hover:scale-105 active:scale-95 transition-all block text-center"
-            >
+          <div class="how-it-works-cta">
+            <a href="#services" class="btn-cta">
               Start Your Application Now
             </a>
           </div>
@@ -518,22 +380,18 @@
       </section>
 
       <!-- NEED ASSISTANCE SECTION -->
-      <section id="assistance" class="max-w-7xl mx-auto px-6 py-16 md:py-24 reveal">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-black text-[#1e293b] mb-4">
-            Need Assistance?
-          </h2>
-          <p class="text-slate-500 font-medium">
+      <section id="assistance" class="assistance-section reveal">
+        <div class="section-header">
+          <h2 class="section-title text-[#1e293b]">Need Assistance?</h2>
+          <p class="section-subtitle">
             Our support team is here to help you with any questions or concerns
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="assistance-grid">
           <!-- Assistance Cards -->
           <div class="assistance-card group">
-            <div
-              class="w-10 h-10 bg-white/10 rounded flex items-center justify-center mb-6 text-white border border-white/10"
-            >
+            <div class="assistance-icon-container">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="w-5 h-5"
@@ -549,21 +407,17 @@
                 />
               </svg>
             </div>
-            <h4 class="font-black text-white text-lg mb-2">Help Center</h4>
-            <p class="text-sm text-white/60 mb-6 leading-relaxed">
+            <h4 class="assistance-card-title">Help Center</h4>
+            <p class="assistance-card-description">
               Browse our comprehensive FAQ and guides
             </p>
-            <a
-              href="#"
-              class="mt-auto text-yellow-400 text-xs font-black uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all"
+            <a href="#" class="assistance-card-link"
               >Visit Help Center &rarr;</a
             >
           </div>
 
           <div class="assistance-card group">
-            <div
-              class="w-10 h-10 bg-white/10 rounded flex items-center justify-center mb-6 text-white border border-white/10"
-            >
+            <div class="assistance-icon-container">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="w-5 h-5"
@@ -579,21 +433,15 @@
                 />
               </svg>
             </div>
-            <h4 class="font-black text-white text-lg mb-2">Call Us</h4>
-            <p class="text-sm text-white/60 mb-6 leading-relaxed">
+            <h4 class="assistance-card-title">Call Us</h4>
+            <p class="assistance-card-description">
               (02) 8538-3200 | Mon-Fri, 8AM-5PM
             </p>
-            <a
-              href="#"
-              class="mt-auto text-yellow-400 text-xs font-black uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all"
-              >Call Now &rarr;</a
-            >
+            <a href="#" class="assistance-card-link">Call Now &rarr;</a>
           </div>
 
           <div class="assistance-card group">
-            <div
-              class="w-10 h-10 bg-white/10 rounded flex items-center justify-center mb-6 text-white border border-white/10"
-            >
+            <div class="assistance-icon-container">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="w-5 h-5"
@@ -609,23 +457,13 @@
                 />
               </svg>
             </div>
-            <h4 class="font-black text-white text-lg mb-2">
-              Email Support
-            </h4>
-            <p class="text-sm text-white/60 mb-6 leading-relaxed">
-              orus.support@bir.gov.ph
-            </p>
-            <a
-              href="#"
-              class="mt-auto text-yellow-400 text-xs font-black uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all"
-              >Send Email &rarr;</a
-            >
+            <h4 class="assistance-card-title">Email Support</h4>
+            <p class="assistance-card-description">orus.support@bir.gov.ph</p>
+            <a href="#" class="assistance-card-link">Send Email &rarr;</a>
           </div>
 
           <div class="assistance-card group">
-            <div
-              class="w-10 h-10 bg-white/10 rounded flex items-center justify-center mb-6 text-white border border-white/10"
-            >
+            <div class="assistance-icon-container">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="w-5 h-5"
@@ -641,32 +479,18 @@
                 />
               </svg>
             </div>
-            <h4 class="font-black text-white text-lg mb-2">Live Chat</h4>
-            <p class="text-sm text-white/60 mb-6 leading-relaxed">
-              Chat with our support team
-            </p>
-            <a
-              href="#"
-              class="mt-auto text-yellow-400 text-xs font-black uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all"
-              >Start Chat &rarr;</a
-            >
+            <h4 class="assistance-card-title">Live Chat</h4>
+            <p class="assistance-card-description">Chat with our support team</p>
+            <a href="#" class="assistance-card-link">Start Chat &rarr;</a>
           </div>
         </div>
 
         <!-- Important Notice Banner -->
         <div class="notice-banner">
-          <div
-            class="w-6 h-6 bg-[#03297b] text-white rounded-full flex items-center justify-center shrink-0 text-[10px] font-bold"
-          >
-            i
-          </div>
+          <div class="notice-info-icon">i</div>
           <div>
-            <h5
-              class="font-black text-[#03297b] text-s uppercase tracking-widest mb-1"
-            >
-              Important Notice
-            </h5>
-            <p class="text-[13px] text-[#1e293b] leading-relaxed">
+            <h5 class="notice-title">Important Notice</h5>
+            <p class="notice-text">
               BIR will never ask for your password, OTP, or personal information
               via email or phone call. If you receive suspicious communications
               claiming to be from BIR, please report it immediately to our

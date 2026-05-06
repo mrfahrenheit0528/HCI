@@ -67,7 +67,7 @@ The application will be available at `http://127.0.0.1:5000/`.
 
 ## 🎨 Design Standards
 
-- **Typography**: Uses a mix of heavy-weight headers (Inter/Black) for a "Brutalist" feel and high-readability body text.
+- **Typography**: Uses a modern-feel and high-readability body text.
 - **Color Palette**: 
   - `Primary Blue`: `#03297b` (BIR Brand)
   - `Accent Blue`: `#2563eb`

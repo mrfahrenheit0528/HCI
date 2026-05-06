@@ -7,7 +7,7 @@ PorTaxPH is a high-fidelity frontend redesign of the Bureau of Internal Revenue 
 The goal of this project was to refactor and redesign the BIR ORUS interface to improve usability, visual hierarchy, and performance. We migrated from a monolithic, utility-heavy structure to a modular, semantic architecture using custom CSS and Flask.
 
 ### Key Features
-- **Brutalist-Premium Design**: A bold, clean aesthetic using high-contrast typography, glassmorphism effects, and vibrant gradients.
+- **Modern-Premium Design**: A bold, clean aesthetic using high-contrast typography, modern style effects, and vibrant gradients.
 - **Modular CSS Architecture**: Every page has its own dedicated stylesheet in `static/css/pages/`, ensuring minimal CSS bloat and easy maintenance.
 - **Interactive Service Portals**: Custom-built modal systems for registration, updates, and verification services.
 - **Scroll-Reveal Animations**: Smooth, scroll-triggered animations implemented via a global reveal system.
